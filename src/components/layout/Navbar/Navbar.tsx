@@ -5,9 +5,11 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { navigation } from "@/data/navigation";
 import { useMobileMenu } from "@/hooks/useMobileMenu";
+import { useLocale } from "@/providers/LocaleProvider";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button/Button";
 import { Container } from "@/components/ui/Container/Container";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher/LanguageSwitcher";
 import { CloseIcon, MailIcon, MenuIcon } from "@/components/ui/icons/Icons";
 import styles from "./Navbar.module.scss";
 
@@ -15,6 +17,7 @@ const ACTIVE_ITEM_ID = "home";
 
 export function Navbar() {
   const { isOpen, toggle, close } = useMobileMenu();
+  const { t } = useLocale();
   const menuId = useId();
 
   useEffect(() => {
@@ -38,7 +41,7 @@ export function Navbar() {
   return (
     <header className={styles.header}>
       <Container className={styles.inner}>
-        <nav className={styles.nav} aria-label="Primary">
+        <nav className={styles.nav} aria-label={t.nav.primary}>
           <ul className={styles.desktopList}>
             {navigation.map((item) => {
               const isActive = item.id === ACTIVE_ITEM_ID;
@@ -50,7 +53,7 @@ export function Navbar() {
                     className={cn(styles.link, isActive && styles.active)}
                     onClick={close}
                   >
-                    {item.label}
+                    {t.nav[item.id]}
                   </Link>
                 </li>
               );
@@ -59,13 +62,15 @@ export function Navbar() {
         </nav>
 
         <div className={styles.actions}>
+          <LanguageSwitcher />
+
           <Button
             href="#contacts"
             icon={<MailIcon />}
             className={styles.hireButton}
-            ariaLabel="Hire me"
+            ariaLabel={t.nav.hireMe}
           >
-            Hire Me!
+            {t.nav.hireMe}
           </Button>
 
           <button
@@ -73,7 +78,7 @@ export function Navbar() {
             className={styles.menuToggle}
             aria-expanded={isOpen}
             aria-controls={menuId}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-label={isOpen ? t.nav.closeMenu : t.nav.openMenu}
             onClick={toggle}
           >
             {isOpen ? <CloseIcon /> : <MenuIcon />}
@@ -103,7 +108,7 @@ export function Navbar() {
                       )}
                       onClick={close}
                     >
-                      {item.label}
+                      {t.nav[item.id]}
                     </Link>
                   </li>
                 ))}
@@ -114,9 +119,9 @@ export function Navbar() {
                 icon={<MailIcon />}
                 className={styles.mobileHire}
                 onClick={close}
-                ariaLabel="Hire me"
+                ariaLabel={t.nav.hireMe}
               >
-                Hire Me!
+                {t.nav.hireMe}
               </Button>
             </Container>
           </motion.div>

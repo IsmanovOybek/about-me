@@ -2,7 +2,7 @@ import type { Profile } from "@/types";
 
 export const profile: Profile = {
   name: "Kyler",
-  role: "Software AI Developer",
+  role: "software ai developer",
   tagline: "Building intelligent products with clean engineering.",
   bio: "Software AI developer focused on practical products and scalable systems.",
   age: 26,
@@ -16,6 +16,16 @@ export const profile: Profile = {
       id: "telegram",
       label: "Telegram",
       href: "https://t.me/@IsmanovOybek",
+    },
+    {
+      id: "kakaotalk",
+      label: "KakaoTalk",
+      href: "https://open.kakao.com/",
+    },
+    {
+      id: "tiktok",
+      label: "TikTok",
+      href: "https://www.tiktok.com/",
     },
     {
       id: "facebook",

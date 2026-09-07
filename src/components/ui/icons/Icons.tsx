@@ -6,6 +6,22 @@ export function TelegramIcon() {
   );
 }
 
+export function KakaoTalkIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M12 3C6.7 3 2.4 6.4 2.4 10.5c0 2.6 1.7 4.9 4.3 6.2-.2.6-.7 2.2-.8 2.5 0 0-.1.3.1.4.2.1.4 0 .4 0 .5-.1 2.4-1.6 2.8-1.9.9.1 1.8.2 2.8.2 5.3 0 9.6-3.4 9.6-7.5S17.3 3 12 3Z" />
+    </svg>
+  );
+}
+
+export function TikTokIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M19.6 7.2a5.9 5.9 0 0 1-3.5-1.1v7.3a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v2.8a2.8 2.8 0 1 0 2 2.7V2.5h2.7a5.9 5.9 0 0 0 3.5 3.5v1.2Z" />
+    </svg>
+  );
+}
+
 export function FacebookIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">

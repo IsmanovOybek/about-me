@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { Profile } from "@/types";
+import { useLocale } from "@/providers/LocaleProvider";
 import { Button } from "@/components/ui/Button/Button";
 import { SocialLink } from "@/components/ui/SocialLink/SocialLink";
 import styles from "./Hero.module.scss";
@@ -11,11 +12,13 @@ interface HeroContentProps {
 }
 
 export function HeroContent({ profile }: HeroContentProps) {
+  const { t } = useLocale();
+
   const details = [
-    { label: "Age", value: profile.age?.toString() },
-    { label: "Address", value: profile.location },
-    { label: "E-mail", value: profile.email },
-    { label: "Phone", value: profile.phone },
+    { key: "age", label: t.hero.age, value: profile.age?.toString() },
+    { key: "address", label: t.hero.address, value: t.profile.location },
+    { key: "email", label: t.hero.email, value: profile.email },
+    { key: "phone", label: t.hero.phone, value: profile.phone },
   ].filter((item) => Boolean(item.value));
 
   return (
@@ -26,21 +29,21 @@ export function HeroContent({ profile }: HeroContentProps) {
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>Personal Portfolio</p>
+        <p className={styles.eyebrow}>{t.hero.eyebrow}</p>
         <h1 id="hero-title" className={styles.title}>
-          Hello, I Am  <span>{profile.name}</span>
+          {t.hero.hello} <span>{profile.name}</span>
         </h1>
-        <p className={styles.role}>{profile.role}</p>
+        <p className={styles.role}>{t.profile.role}</p>
       </div>
 
       <dl className={styles.details}>
         {details.map((item) => (
-          <div key={item.label} className={styles.detailRow}>
+          <div key={item.key} className={styles.detailRow}>
             <dt>{item.label}</dt>
             <dd>
-              {item.label === "E-mail" ? (
+              {item.key === "email" ? (
                 <a href={`mailto:${item.value}`}>{item.value}</a>
-              ) : item.label === "Phone" ? (
+              ) : item.key === "phone" ? (
                 <a href={`tel:${item.value?.replace(/\s+/g, "")}`}>
                   {item.value}
                 </a>
@@ -66,7 +69,7 @@ export function HeroContent({ profile }: HeroContentProps) {
       </ul>
 
       <Button href="#portfolio" className={styles.cta}>
-        See My Portfolio
+        {t.hero.seePortfolio}
       </Button>
     </motion.div>
   );

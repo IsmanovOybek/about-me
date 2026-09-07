@@ -11,8 +11,8 @@
   --color-accent-hover: #{$color-accent-hover};
   --color-accent-soft: #{$color-accent-soft};
 
-  --font-sans: var(--font-plus-jakarta), #{$font-sans};
-  --font-display: var(--font-plus-jakarta), #{$font-display};
+  --font-sans: var(--font-plus-jakarta), var(--font-noto-sans), var(--font-noto-kr), #{$font-sans};
+  --font-display: var(--font-plus-jakarta), var(--font-noto-sans), var(--font-noto-kr), #{$font-display};
 
   --container-max: #{$container-max};
   --container-padding: #{$container-padding};

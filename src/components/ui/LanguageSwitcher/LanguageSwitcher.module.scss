@@ -1,0 +1,99 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.root {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: rgba($color-surface, 0.9);
+  color: $color-foreground;
+  font-family: $font-sans;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition:
+    border-color $transition-fast,
+    color $transition-fast,
+    background-color $transition-fast;
+
+  &:hover {
+    border-color: rgba($color-accent, 0.4);
+    color: $color-accent;
+    background-color: $color-accent-soft;
+  }
+}
+
+.chevron {
+  font-size: 0.7rem;
+  line-height: 1;
+  transition: transform $transition-fast;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  z-index: $z-overlay;
+  min-width: 10.5rem;
+  padding: $space-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  box-shadow:
+    0 12px 28px rgba(28, 30, 38, 0.1),
+    0 2px 6px rgba(28, 30, 38, 0.04);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border: 0;
+  border-radius: $radius-sm;
+  background: transparent;
+  color: $color-foreground;
+  font-family: $font-sans;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: left;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast;
+
+  &:hover {
+    background-color: $color-accent-soft;
+    color: $color-accent;
+  }
+}
+
+.active {
+  background-color: $color-accent-soft;
+  color: $color-accent;
+  font-weight: 700;
+}
+
+.code {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.name {
+  color: inherit;
+}

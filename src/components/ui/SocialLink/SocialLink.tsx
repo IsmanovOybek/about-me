@@ -3,7 +3,9 @@ import type { SocialLink as SocialLinkType, SocialPlatform } from "@/types";
 import {
   FacebookIcon,
   InstagramIcon,
+  KakaoTalkIcon,
   TelegramIcon,
+  TikTokIcon,
   WhatsAppIcon,
 } from "@/components/ui/icons/Icons";
 import { cn } from "@/lib/utils";
@@ -11,6 +13,8 @@ import styles from "./SocialLink.module.scss";
 
 const icons: Record<SocialPlatform, ComponentType> = {
   telegram: TelegramIcon,
+  kakaotalk: KakaoTalkIcon,
+  tiktok: TikTokIcon,
   facebook: FacebookIcon,
   instagram: InstagramIcon,
   whatsapp: WhatsAppIcon,

@@ -1,5 +1,13 @@
+export type NavItemId =
+  | "home"
+  | "portfolio"
+  | "services"
+  | "resume"
+  | "pricing"
+  | "about"
+  | "contacts";
+
 export interface NavItem {
-  id: string;
-  label: string;
+  id: NavItemId;
   href: string;
 }

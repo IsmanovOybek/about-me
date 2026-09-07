@@ -1,5 +1,7 @@
 export type SocialPlatform =
   | "telegram"
+  | "kakaotalk"
+  | "tiktok"
   | "facebook"
   | "instagram"
   | "whatsapp";
