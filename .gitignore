@@ -36,6 +36,10 @@ yarn-error.log*
 .next
 .env
 .env.local
+
+# local image tooling
+.venv-img/
+
 # vercel
 .vercel
 

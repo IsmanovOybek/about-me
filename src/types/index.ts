@@ -1,6 +1,7 @@
 export type {
   Profile,
   SocialLink,
+  SocialPlatform,
 } from "./profile";
 export type { Project } from "./project";
 export type { Experience } from "./experience";

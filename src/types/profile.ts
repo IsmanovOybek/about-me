@@ -1,8 +1,13 @@
+export type SocialPlatform =
+  | "telegram"
+  | "facebook"
+  | "instagram"
+  | "whatsapp";
+
 export interface SocialLink {
-  id: string;
+  id: SocialPlatform;
   label: string;
   href: string;
-  icon?: string;
 }
 
 export interface Profile {
@@ -11,8 +16,10 @@ export interface Profile {
   tagline: string;
   bio: string;
   email: string;
+  age?: number;
+  phone?: string;
   location?: string;
   resumeUrl?: string;
-  avatarUrl?: string;
+  avatarUrl: string;
   socials: SocialLink[];
 }

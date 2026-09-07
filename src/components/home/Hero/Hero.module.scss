@@ -1,0 +1,310 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(47, 111, 237, 0.06), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(176, 190, 220, 0.35), transparent 34%),
+    linear-gradient(180deg, #f7f8fc 0%, #eef1f7 58%, #e8ecf4 100%);
+  padding-top: $space-5;
+  padding-bottom: 5.5rem;
+
+  @include respond-to(desktop) {
+    padding-top: $space-6;
+    padding-bottom: 8rem;
+  }
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: $space-6;
+  align-items: center;
+
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    min-height: calc(100vh - $header-height - 1rem);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.35rem, 2.4vw, 1.85rem);
+  max-width: 36rem;
+  order: 2;
+
+  @include respond-to(desktop) {
+    order: 0;
+    padding-bottom: $space-6;
+  }
+}
+
+.intro {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: $color-accent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    width: 1.6rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+  }
+}
+
+.title {
+  color: $color-foreground;
+  font-family: $font-display;
+  font-size: clamp(2.55rem, 5.4vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+
+  span {
+    color: $color-accent;
+  }
+}
+
+.role {
+  color: $color-muted;
+  font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.details {
+  display: grid;
+  gap: 0.95rem;
+  width: 100%;
+  max-width: 27rem;
+  margin-top: 0.25rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba($color-border, 0.9);
+  border-radius: 1rem;
+  background: rgba($color-surface, 0.72);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(28, 40, 80, 0.04);
+}
+
+.detailRow {
+  display: grid;
+  grid-template-columns: 6.75rem minmax(0, 1fr);
+  gap: $space-3;
+  align-items: baseline;
+
+  dt {
+    color: #7a8296;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    color: $color-foreground;
+    font-size: 0.98rem;
+    font-weight: 600;
+    word-break: break-word;
+
+    a {
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.15rem;
+}
+
+.cta {
+  margin-top: 0.35rem;
+  min-height: 3.15rem;
+  padding-inline: 1.65rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 14px 28px rgba(47, 111, 237, 0.28);
+}
+
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32rem;
+  order: 1;
+
+  @include respond-to(tablet) {
+    min-height: 38rem;
+  }
+
+  @include respond-to(desktop) {
+    order: 0;
+    min-height: 46rem;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-top: $space-4;
+    padding-right: 0.25rem;
+  }
+}
+
+.blob {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  width: min(100%, 40rem);
+  aspect-ratio: 1 / 1.05;
+  border-radius: 56% 44% 48% 52% / 46% 42% 58% 54%;
+  background:
+    radial-gradient(circle at 48% 34%, rgba(255, 255, 255, 0.95) 0%, transparent 38%),
+    radial-gradient(circle at 52% 48%, rgba(232, 236, 245, 0.95) 0%, transparent 55%),
+    linear-gradient(160deg, #dfe6f4 0%, #c9d5ef 38%, #b7c6e8 68%, #a8b8df 100%);
+  box-shadow:
+    inset 0 -24px 48px rgba(120, 138, 180, 0.14),
+    0 18px 40px rgba(90, 110, 160, 0.12);
+  transform: translateX(-50%) rotate(-4deg);
+  animation: blobFloat 10s ease-in-out infinite;
+
+  @include respond-to(desktop) {
+    top: 0;
+    left: auto;
+    right: 2%;
+    width: min(100%, 46rem);
+    transform: rotate(-5deg);
+  }
+}
+
+.blobSoft {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  width: min(82%, 26rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 248, 242, 0.55) 0%, rgba(214, 224, 245, 0.35) 42%, transparent 72%);
+  filter: blur(22px);
+  transform: translateX(-50%);
+  animation: blobFloatSoft 12s ease-in-out infinite reverse;
+
+  @include respond-to(desktop) {
+    left: auto;
+    right: 8%;
+    transform: none;
+  }
+}
+
+.imageWrap {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 30rem);
+  height: clamp(30rem, 68vh, 40rem);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include respond-to(desktop) {
+    width: min(100%, 40rem);
+    height: clamp(36rem, 78vh, 46rem);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 4%;
+    width: 78%;
+    height: 16%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(70, 88, 130, 0.2), transparent 70%);
+    transform: translateX(-50%);
+    filter: blur(10px);
+    z-index: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 18%;
+    background: linear-gradient(180deg, transparent, rgba(247, 248, 252, 0.55));
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 118%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center top;
+  transform: translateY(-4%);
+  filter: drop-shadow(0 22px 34px rgba(70, 86, 120, 0.22));
+}
+
+.slope {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $color-surface 28%, $color-surface 100%);
+  clip-path: polygon(0 68%, 100% 8%, 100% 100%, 0 100%);
+  z-index: 2;
+  pointer-events: none;
+
+  @include respond-to(desktop) {
+    height: 7.5rem;
+    clip-path: polygon(0 74%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes blobFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes blobFloatSoft {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -6px;
+  }
+}

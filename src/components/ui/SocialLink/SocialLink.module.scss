@@ -1,0 +1,48 @@
+@use "../../../styles/variables" as *;
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  border-radius: 999px;
+  color: $color-surface;
+  box-shadow: 0 8px 18px rgba(28, 40, 80, 0.12);
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base,
+    filter $transition-fast;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 24px rgba(28, 40, 80, 0.16);
+    filter: brightness(1.04);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 3px;
+  }
+}
+
+.telegram {
+  background: linear-gradient(145deg, #3bb6f3, #229ed9);
+}
+
+.facebook {
+  background: linear-gradient(145deg, #3b82f6, #1877f2);
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b 48%, #8134af 78%, #515bd4);
+}
+
+.whatsapp {
+  background: linear-gradient(145deg, #3dde78, #25d366);
+}
