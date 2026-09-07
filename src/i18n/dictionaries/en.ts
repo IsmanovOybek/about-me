@@ -28,6 +28,21 @@ export interface Dictionary {
     role: string;
     location: string;
   };
+  askAi: {
+    status: string;
+    title: string;
+    subtitle: string;
+    intro: string;
+    placeholder: string;
+    send: string;
+    suggestions: {
+      hardest: string;
+      speed: string;
+      stack: string;
+      seoul: string;
+    };
+    pendingReply: string;
+  };
 }
 
 export const en: Dictionary = {
@@ -59,5 +74,23 @@ export const en: Dictionary = {
   profile: {
     role: "Software AI Developer",
     location: "Suwon, South Korea",
+  },
+  askAi: {
+    status: "In Suwon · open to full-time and contract",
+    title: "I ship production AI systems — solo, end-to-end.",
+    subtitle:
+      "AI SaaS platforms, RAG pipelines and LLM orchestration — for Korean product teams and remote clients worldwide.",
+    intro:
+      "Don't take my word for it. Ask the chat — it runs on a RAG pipeline I built, with multi-provider failover.",
+    placeholder: "Ask anything about Kyler...",
+    send: "Send message",
+    suggestions: {
+      hardest: "What's the hardest thing he's built?",
+      speed: "How fast can he ship alone?",
+      stack: "What's his real tech stack?",
+      seoul: "Why hire him in Korea?",
+    },
+    pendingReply:
+      "AI is not connected yet. The chat UI is ready — we will plug in the trained RAG model next.",
   },
 };

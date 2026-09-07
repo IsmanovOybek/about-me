@@ -30,4 +30,22 @@ export const uz: Dictionary = {
     role: "Software AI dasturchi",
     location: "Suwon, Janubiy Koreya",
   },
+  askAi: {
+    status: "Suwon · full-time va contract uchun ochiq",
+    title: "Production AI tizimlarni yakka o‘zim — end-to-end yetkazaman.",
+    subtitle:
+      "AI SaaS, RAG pipeline va LLM orchestration — Koreya product jamoalari va dunyo bo‘ylab remote mijozlar uchun.",
+    intro:
+      "Faqat so‘zimga ishonmang. Chatdan so‘rang — u men qurgan RAG pipeline va multi-provider failover bilan ishlaydi.",
+    placeholder: "Kyler haqida istalgan savol bering...",
+    send: "Xabar yuborish",
+    suggestions: {
+      hardest: "U qurgan eng qiyin narsa nima?",
+      speed: "Yakka o‘zi qanchalik tez ship qiladi?",
+      stack: "Haqiqiy tech stacki qanday?",
+      seoul: "Nega Koreyada uni yollash kerak?",
+    },
+    pendingReply:
+      "AI hali ulanmagan. Chat UI tayyor — keyingi bosqichda train qilingan RAG modelni ulaymiz.",
+  },
 };

@@ -1,0 +1,331 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  position: relative;
+  background: #f7f7f5;
+  padding: $space-8 0 $space-9;
+  border-top: 1px solid rgba($color-border, 0.7);
+}
+
+.sectionActive {
+  background: #ffffff;
+  height: calc(100dvh - #{$header-height});
+  max-height: calc(100dvh - #{$header-height});
+  padding: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba($color-border, 0.7);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-6;
+  width: 100%;
+  max-width: 56rem;
+}
+
+.intro {
+  display: grid;
+  gap: $space-4;
+  width: 100%;
+  max-width: 48rem;
+  text-align: center;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-inline: auto;
+  color: #6b7280;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+
+.statusDot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.title {
+  color: $color-foreground;
+  font-family: $font-display;
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: clamp(0.98rem, 1.5vw, 1.12rem);
+  line-height: 1.65;
+}
+
+.hint {
+  color: #6b7280;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.chatShell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-5;
+  width: 100%;
+}
+
+.chatStage {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 44rem);
+  height: 100%;
+  margin-inline: auto;
+  padding: 1.25rem 1.25rem 0;
+  min-height: 0;
+}
+
+.messagesScroll {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  padding-inline: 0.25rem;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    #000 3.5rem,
+    #000 calc(100% - 1rem),
+    #000 100%
+  );
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  width: 100%;
+  padding-block: 1.5rem 2rem;
+}
+
+.messagesEnd {
+  width: 100%;
+  height: 1px;
+  flex-shrink: 0;
+}
+
+.userRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.55rem;
+  width: 100%;
+  animation: messageIn 0.28s ease;
+}
+
+.userMessage {
+  max-width: min(100%, 28rem);
+  padding: 0.85rem 1rem;
+  border: 1px solid #ececec;
+  border-radius: 1.1rem;
+  background: #f4f4f5;
+  color: $color-foreground;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.userAvatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: #ececec;
+  color: #6b7280;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: lowercase;
+}
+
+.assistantMessage {
+  align-self: flex-start;
+  max-width: min(100%, 38rem);
+  color: #1f2937;
+  font-size: 1rem;
+  line-height: 1.75;
+  animation: messageIn 0.32s ease;
+}
+
+.typing {
+  letter-spacing: 0.2em;
+  color: #9ca3af;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-3;
+  width: 100%;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $space-5;
+  min-height: 8.5rem;
+  padding: 1rem 1rem 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.9rem;
+  background: $color-surface;
+  color: $color-foreground;
+  text-align: left;
+  transition:
+    border-color $transition-fast,
+    box-shadow $transition-fast,
+    transform $transition-fast;
+
+  &:hover:not(:disabled) {
+    border-color: rgba($color-accent, 0.35);
+    box-shadow: 0 10px 24px rgba(28, 40, 80, 0.06);
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+.cardText {
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.cardIcon {
+  display: inline-flex;
+  align-self: flex-end;
+  color: #9ca3af;
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+}
+
+.inputDock {
+  width: 100%;
+  flex: 0 0 auto;
+  max-width: 44rem;
+  margin-inline: auto;
+  padding: 1.75rem 0 2.5rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff 28%);
+}
+
+.chatShell .inputDock {
+  max-width: 42rem;
+  padding: $space-2 0 0;
+  background: transparent;
+}
+
+.inputBar {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  width: 100%;
+  min-height: 3.5rem;
+  padding: 0.35rem 0.4rem 0.35rem 1.15rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: $color-surface;
+  box-shadow: 0 8px 24px rgba(28, 40, 80, 0.04);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: $color-foreground;
+  font-family: $font-sans;
+  font-size: 0.95rem;
+  outline: none;
+
+  &::placeholder {
+    color: #9ca3af;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
+
+.sendButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.55rem;
+  height: 2.55rem;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #eef0f3;
+  color: #374151;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast,
+    transform $transition-fast;
+
+  svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color-accent-soft;
+    color: $color-accent;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes messageIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

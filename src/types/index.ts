@@ -1,3 +1,4 @@
+export type { ChatMessage, ChatRole, AskAiSuggestion, SuggestionIcon } from "./chat";
 export type {
   Profile,
   SocialLink,
