@@ -5,11 +5,8 @@
   position: relative;
   overflow: hidden;
   padding: $space-9 0;
-  border-top: 1px solid rgba($color-border, 0.7);
-  background:
-    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(47, 111, 237, 0.07), transparent 55%),
-    radial-gradient(ellipse 55% 45% at 92% 100%, rgba(28, 30, 38, 0.04), transparent 50%),
-    linear-gradient(180deg, #f7f8fc 0%, #eef2f9 100%);
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  background: var(--experience-gradient);
 }
 
 .inner {
@@ -25,7 +22,7 @@
 }
 
 .eyebrow {
-  color: $color-accent;
+  color: var(--color-accent);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -33,8 +30,8 @@
 }
 
 .title {
-  color: $color-foreground;
-  font-family: $font-display;
+  color: var(--color-foreground);
+  font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.8vw, 2.65rem);
   font-weight: 800;
   letter-spacing: -0.035em;
@@ -81,25 +78,29 @@
   height: 0.72rem;
   flex-shrink: 0;
   border-radius: 999px;
-  background: $color-surface;
-  border: 2px solid #9eb2d8;
-  box-shadow: 0 0 0 4px rgba(247, 248, 252, 0.9);
+  background: var(--color-surface);
+  border: 2px solid var(--timeline-dot);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-background) 90%, transparent);
   transition: border-color $transition-base, box-shadow $transition-base;
 }
 
 .dotCurrent {
-  border-color: $color-accent;
-  background: $color-accent;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
   box-shadow:
-    0 0 0 4px rgba(47, 111, 237, 0.12),
-    0 0 0 8px rgba(247, 248, 252, 0.9);
+    0 0 0 4px color-mix(in srgb, var(--color-accent) 12%, transparent),
+    0 0 0 8px color-mix(in srgb, var(--color-background) 90%, transparent);
 }
 
 .spine {
   flex: 1;
   width: 1px;
   margin-top: 0.45rem;
-  background: linear-gradient(180deg, #c5d0e6 0%, rgba(197, 208, 230, 0.15) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--timeline-line) 0%,
+    color-mix(in srgb, var(--timeline-line) 15%, transparent) 100%
+  );
 }
 
 .body {
@@ -127,8 +128,8 @@
 }
 
 .company {
-  color: $color-foreground;
-  font-family: $font-display;
+  color: var(--color-foreground);
+  font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.2vw, 1.45rem);
   font-weight: 800;
   letter-spacing: -0.025em;
@@ -136,7 +137,7 @@
 }
 
 .role {
-  color: $color-muted;
+  color: var(--color-muted);
   font-size: 0.95rem;
   font-weight: 500;
   line-height: 1.45;
@@ -153,7 +154,7 @@
 }
 
 .period {
-  color: $color-foreground;
+  color: var(--color-foreground);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -162,7 +163,7 @@
 }
 
 .location {
-  color: $color-muted;
+  color: var(--color-muted);
   font-size: 0.82rem;
   font-weight: 500;
 }
@@ -170,7 +171,7 @@
 .highlights {
   display: grid;
   gap: 0.7rem;
-  color: #4b5568;
+  color: var(--color-body-text);
   font-size: 0.9rem;
   line-height: 1.65;
 
@@ -186,7 +187,7 @@
       width: 0.35rem;
       height: 0.35rem;
       border-radius: 1px;
-      background: $color-accent;
+      background: var(--color-accent);
       opacity: 0.75;
       transform: rotate(45deg);
     }
@@ -194,7 +195,7 @@
 }
 
 .tech {
-  color: #7a8499;
+  color: var(--color-subtle);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;

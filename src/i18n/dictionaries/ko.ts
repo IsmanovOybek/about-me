@@ -4,6 +4,13 @@ export const ko: Dictionary = {
   language: {
     label: "언어",
   },
+  theme: {
+    toLight: "라이트 모드로 전환",
+    toDark: "다크 모드로 전환",
+  },
+  common: {
+    backToTop: "맨 위로",
+  },
   nav: {
     home: "홈",
     portfolio: "포트폴리오",
@@ -81,6 +88,41 @@ export const ko: Dictionary = {
           "Figma 디자인 시스템을 확장 가능한 재사용성 React 컴포넌트로 변환하여 UI 일관성을 유지하고, 개발 생산성을 25% 이상 향상시켰습니다.",
           "복잡한 B2B SaaS 환경에서 지속적인 코드 리팩토링과 성능 최적화를 진행하여, 시스템 가독성을 높이고 애플리케이션 성능을 20% 개선했습니다.",
           "사용자 피드백과 비즈니스 요구사항을 안정적인 제품 기능으로 전환하는 애자일 프로세스를 주도하여, 스프린트 기능 인도 속도를 15% 가속화했습니다.",
+        ],
+      },
+    },
+  },
+  skills: {
+    eyebrow: "역량",
+    title: "내가 만드는 것",
+    subtitle:
+      "프로덕션 AI 시스템, 견고한 백엔드, 제품급 프론트엔드 — end-to-end로 직접 책임집니다.",
+    categories: {
+      ai: {
+        title: "AI / LLM Engineering",
+        points: [
+          "자동 페일오버가 있는 멀티 프로바이더 LLM 라우팅 — 이 페이지의 채팅이 그 위에서 동작합니다.",
+          "프라이빗 데이터 기반 RAG 파이프라인: 검색, 프롬프트 설계, 스트리밍, 비용 제어.",
+          "음성-텍스트 제품: Whisper 파이프라인을 실제 출시된 보이스 장부 앱으로 구현.",
+          "Claude, Gemini, Vertex Imagen을 잡 큐 뒤에서 오케스트레이션하는 이미지 생성 파이프라인.",
+        ],
+      },
+      backend: {
+        title: "Backend Systems",
+        points: [
+          "프로덕션을 견디는 NestJS API: 큐, 재시도, 멱등성, 상태 머신.",
+          "PostgreSQL·MongoDB 데이터 모델링, Redis로 캐시와 실시간 처리.",
+          "결제/빌링: 사용량에 연결된 Stripe credit metering.",
+          "배포까지 end-to-end: Docker, NGINX, Linux, AWS, CI/CD.",
+        ],
+      },
+      frontend: {
+        title: "Product Frontend",
+        points: [
+          "서버 렌더링과 깔끔한 SEO를 갖춘 Next.js App Router 프론트엔드.",
+          "하나의 코드베이스로 양대 스토어에 출시한 React Native / Expo 앱.",
+          "디자인 시스템 규율: 토큰, 테마, 접근성 — 이 사이트가 샘플입니다.",
+          "TypeScript end-to-end — 웹, 모바일, API를 하나의 언어로.",
         ],
       },
     },

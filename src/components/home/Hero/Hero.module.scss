@@ -4,10 +4,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(47, 111, 237, 0.06), transparent 28%),
-    radial-gradient(circle at 82% 24%, rgba(176, 190, 220, 0.35), transparent 34%),
-    linear-gradient(180deg, #f7f8fc 0%, #eef1f7 58%, #e8ecf4 100%);
+  background: var(--hero-gradient);
   padding-top: $space-5;
   padding-bottom: 5.5rem;
 
@@ -54,7 +51,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  color: $color-accent;
+  color: var(--color-accent);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -70,20 +67,20 @@
 }
 
 .title {
-  color: $color-foreground;
-  font-family: $font-display;
+  color: var(--color-foreground);
+  font-family: var(--font-display);
   font-size: clamp(2.55rem, 5.4vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.05;
 
   span {
-    color: $color-accent;
+    color: var(--color-accent);
   }
 }
 
 .role {
-  color: $color-muted;
+  color: var(--color-muted);
   font-size: clamp(1.02rem, 1.5vw, 1.22rem);
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -96,11 +93,11 @@
   max-width: 27rem;
   margin-top: 0.25rem;
   padding: 1.15rem 1.2rem;
-  border: 1px solid rgba($color-border, 0.9);
+  border: 1px solid color-mix(in srgb, var(--color-border) 90%, transparent);
   border-radius: 1rem;
-  background: rgba($color-surface, 0.72);
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
   backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(28, 40, 80, 0.04);
+  box-shadow: var(--shadow-soft);
 }
 
 .detailRow {
@@ -110,7 +107,7 @@
   align-items: baseline;
 
   dt {
-    color: #7a8296;
+    color: var(--color-subtle);
     font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -118,7 +115,7 @@
   }
 
   dd {
-    color: $color-foreground;
+    color: var(--color-foreground);
     font-size: 0.98rem;
     font-weight: 600;
     word-break: break-word;
@@ -127,7 +124,7 @@
       transition: color $transition-fast;
 
       &:hover {
-        color: $color-accent;
+        color: var(--color-accent);
       }
     }
   }
@@ -146,7 +143,7 @@
   min-height: 3.15rem;
   padding-inline: 1.65rem;
   border-radius: 0.7rem;
-  box-shadow: 0 14px 28px rgba(47, 111, 237, 0.28);
+  box-shadow: var(--shadow-accent);
 }
 
 .visual {
@@ -178,13 +175,10 @@
   width: min(100%, 40rem);
   aspect-ratio: 1 / 1.05;
   border-radius: 56% 44% 48% 52% / 46% 42% 58% 54%;
-  background:
-    radial-gradient(circle at 48% 34%, rgba(255, 255, 255, 0.95) 0%, transparent 38%),
-    radial-gradient(circle at 52% 48%, rgba(232, 236, 245, 0.95) 0%, transparent 55%),
-    linear-gradient(160deg, #dfe6f4 0%, #c9d5ef 38%, #b7c6e8 68%, #a8b8df 100%);
+  background: var(--blob-gradient);
   box-shadow:
-    inset 0 -24px 48px rgba(120, 138, 180, 0.14),
-    0 18px 40px rgba(90, 110, 160, 0.12);
+    inset 0 -24px 48px color-mix(in srgb, var(--color-muted) 18%, transparent),
+    0 18px 40px color-mix(in srgb, var(--color-muted) 14%, transparent);
   transform: translateX(-50%) rotate(-4deg);
   animation: blobFloat 10s ease-in-out infinite;
 
@@ -205,7 +199,12 @@
   aspect-ratio: 1;
   border-radius: 50%;
   background:
-    radial-gradient(circle, rgba(255, 248, 242, 0.55) 0%, rgba(214, 224, 245, 0.35) 42%, transparent 72%);
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-surface) 55%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent-soft) 45%, transparent) 42%,
+      transparent 72%
+    );
   filter: blur(22px);
   transform: translateX(-50%);
   animation: blobFloatSoft 12s ease-in-out infinite reverse;
@@ -240,7 +239,11 @@
     width: 78%;
     height: 16%;
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(70, 88, 130, 0.2), transparent 70%);
+    background: radial-gradient(
+      ellipse,
+      color-mix(in srgb, var(--color-muted) 25%, transparent),
+      transparent 70%
+    );
     transform: translateX(-50%);
     filter: blur(10px);
     z-index: 0;
@@ -251,7 +254,7 @@
     position: absolute;
     inset: auto 0 0;
     height: 18%;
-    background: linear-gradient(180deg, transparent, rgba(247, 248, 252, 0.55));
+    background: var(--image-fade);
     pointer-events: none;
     z-index: 2;
   }
@@ -266,7 +269,7 @@
   object-fit: cover;
   object-position: center top;
   transform: translateY(-4%);
-  filter: drop-shadow(0 22px 34px rgba(70, 86, 120, 0.22));
+  filter: drop-shadow(0 22px 34px color-mix(in srgb, var(--color-muted) 28%, transparent));
 }
 
 .slope {
@@ -275,7 +278,7 @@
   right: 0;
   bottom: -1px;
   height: 5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, $color-surface 28%, $color-surface 100%);
+  background: var(--slope-fade);
   clip-path: polygon(0 68%, 100% 8%, 100% 100%, 0 100%);
   z-index: 2;
   pointer-events: none;

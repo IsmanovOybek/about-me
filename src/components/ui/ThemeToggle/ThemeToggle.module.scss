@@ -1,0 +1,28 @@
+@use "../../../styles/variables" as *;
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: $radius-md;
+  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  color: var(--color-foreground);
+  transition:
+    border-color $transition-fast,
+    color $transition-fast,
+    background-color $transition-fast;
+
+  svg {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+    color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+  }
+}

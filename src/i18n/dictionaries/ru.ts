@@ -4,6 +4,13 @@ export const ru: Dictionary = {
   language: {
     label: "Язык",
   },
+  theme: {
+    toLight: "Включить светлую тему",
+    toDark: "Включить тёмную тему",
+  },
+  common: {
+    backToTop: "Наверх",
+  },
   nav: {
     home: "Главная",
     portfolio: "Портфолио",
@@ -81,6 +88,41 @@ export const ru: Dictionary = {
           "Перевёл Figma design system в масштабируемые React-компоненты — улучшил UI-consistency и продуктивность более чем на 25%.",
           "Провёл рефакторинг и оптимизацию в сложном B2B SaaS — повысил читаемость и производительность приложения на 20%.",
           "Вёл Agile-процесс превращения feedback и бизнес-требований в стабильные фичи — ускорил sprint delivery на 15%.",
+        ],
+      },
+    },
+  },
+  skills: {
+    eyebrow: "Компетенции",
+    title: "Что я строю",
+    subtitle:
+      "Production AI-системы, устойчивые бэкенды и product-grade фронтенды — end-to-end под моей ответственностью.",
+    categories: {
+      ai: {
+        title: "AI / LLM Engineering",
+        points: [
+          "Multi-provider LLM routing с automatic failover — чат на этой странице работает на нём.",
+          "RAG-пайплайны над private data: retrieval, prompt design, streaming, cost control.",
+          "Speech-to-text продукты: Whisper-пайплайны, превращённые в shipping voice-bookkeeping app.",
+          "Оркестрация image-generation через Claude, Gemini и Vertex Imagen за job queues.",
+        ],
+      },
+      backend: {
+        title: "Backend Systems",
+        points: [
+          "NestJS API для production: queues, retries, idempotency, state machines.",
+          "Моделирование данных в PostgreSQL и MongoDB, Redis для cache и real-time.",
+          "Платежи и billing: Stripe credit metering, привязанный к usage.",
+          "Деплой end to end: Docker, NGINX, Linux, AWS, CI/CD.",
+        ],
+      },
+      frontend: {
+        title: "Product Frontend",
+        points: [
+          "Next.js App Router фронтенды с SSR и чистым SEO.",
+          "React Native и Expo приложения, выпущенные в оба стора из одного codebase.",
+          "Дисциплина design-system: tokens, theming, accessibility — этот сайт как sample.",
+          "TypeScript end to end — один язык для web, mobile и API.",
         ],
       },
     },

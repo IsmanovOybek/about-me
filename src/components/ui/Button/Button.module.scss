@@ -9,7 +9,7 @@
   padding: 0.75rem 1.3rem;
   border: 1px solid transparent;
   border-radius: 0.65rem;
-  font-family: $font-sans;
+  font-family: var(--font-sans);
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -46,32 +46,31 @@
 }
 
 .primary {
-  background-color: $color-accent;
-  color: $color-surface;
-  box-shadow: 0 8px 18px rgba(47, 111, 237, 0.2);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-accent);
 
   &:hover {
-    background-color: $color-accent-hover;
-    box-shadow: 0 10px 22px rgba(47, 111, 237, 0.28);
+    background-color: var(--color-accent-hover);
   }
 }
 
 .secondary {
-  background-color: $color-surface;
-  color: $color-accent;
-  border-color: $color-accent;
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 
   &:hover {
-    background-color: $color-accent-soft;
+    background-color: var(--color-accent-soft);
   }
 }
 
 .ghost {
   background-color: transparent;
-  color: $color-foreground;
+  color: var(--color-foreground);
 
   &:hover {
-    background-color: $color-accent-soft;
-    color: $color-accent;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent);
   }
 }

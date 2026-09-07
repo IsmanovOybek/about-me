@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Noto_Sans, Noto_Sans_KR, Plus_Jakarta_Sans } from "next/font/google";
 import { LocaleProvider } from "@/providers/LocaleProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { themeInitScript } from "@/lib/theme-script";
 import "./globals.scss";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -34,7 +37,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body>
-        <LocaleProvider>{children}</LocaleProvider>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+        <ThemeProvider>
+          <LocaleProvider>{children}</LocaleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

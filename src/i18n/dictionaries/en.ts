@@ -2,6 +2,13 @@ export interface Dictionary {
   language: {
     label: string;
   };
+  theme: {
+    toLight: string;
+    toDark: string;
+  };
+  common: {
+    backToTop: string;
+  };
   nav: {
     home: string;
     portfolio: string;
@@ -56,11 +63,30 @@ export interface Dictionary {
       }
     >;
   };
+  skills: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    categories: Record<
+      string,
+      {
+        title: string;
+        points: string[];
+      }
+    >;
+  };
 }
 
 export const en: Dictionary = {
   language: {
     label: "Language",
+  },
+  theme: {
+    toLight: "Switch to light mode",
+    toDark: "Switch to dark mode",
+  },
+  common: {
+    backToTop: "Back to top",
   },
   nav: {
     home: "Home",
@@ -139,6 +165,41 @@ export const en: Dictionary = {
           "Converted Figma design systems into scalable reusable React components — improving UI consistency and productivity by over 25%.",
           "Refactored and optimized complex B2B SaaS codebases — improving readability and application performance by 20%.",
           "Led Agile delivery of user feedback and business requirements into stable product features — accelerating sprint delivery by 15%.",
+        ],
+      },
+    },
+  },
+  skills: {
+    eyebrow: "Capabilities",
+    title: "What I build",
+    subtitle:
+      "Production AI systems, resilient backends, and product-grade frontends — owned end to end.",
+    categories: {
+      ai: {
+        title: "AI / LLM Engineering",
+        points: [
+          "Multi-provider LLM routing with automatic failover — the chat on this page runs on it.",
+          "RAG pipelines over private data: retrieval, prompt design, streaming, cost control.",
+          "Speech-to-text products: Whisper pipelines turned into a shipping voice-bookkeeping app.",
+          "Image-generation orchestration across Claude, Gemini and Vertex Imagen behind job queues.",
+        ],
+      },
+      backend: {
+        title: "Backend Systems",
+        points: [
+          "NestJS APIs that survive production: queues, retries, idempotency, state machines.",
+          "Data modeling in PostgreSQL and MongoDB, with Redis for cache and real-time.",
+          "Payments and billing: Stripe credit metering wired to usage.",
+          "Deployment owned end to end: Docker, NGINX, Linux, AWS, CI/CD.",
+        ],
+      },
+      frontend: {
+        title: "Product Frontend",
+        points: [
+          "Next.js App Router frontends with server rendering and clean SEO.",
+          "React Native and Expo apps shipped to both stores from one codebase.",
+          "Design-system discipline: tokens, theming, accessibility — this site is the sample.",
+          "TypeScript end to end — one language across web, mobile and API.",
         ],
       },
     },

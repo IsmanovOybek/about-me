@@ -2,20 +2,111 @@
 @use "../styles/reset";
 
 :root {
-  --color-background: #{$color-background};
-  --color-surface: #{$color-surface};
-  --color-foreground: #{$color-foreground};
-  --color-muted: #{$color-muted};
-  --color-border: #{$color-border};
-  --color-accent: #{$color-accent};
-  --color-accent-hover: #{$color-accent-hover};
-  --color-accent-soft: #{$color-accent-soft};
+  color-scheme: light;
+
+  --color-background: #f4f6fb;
+  --color-surface: #ffffff;
+  --color-foreground: #1c1e26;
+  --color-muted: #5a6072;
+  --color-border: #e4e8f0;
+  --color-accent: #2f6fed;
+  --color-accent-hover: #245bd1;
+  --color-accent-soft: #eaf1ff;
+  --color-on-accent: #ffffff;
+  --color-subtle: #7a8296;
+  --color-body-text: #4b5568;
+  --color-chip: #eef0f3;
+  --color-chat-user: #f4f4f5;
+  --color-chat-border: #ececec;
+  --color-section-muted: #f7f7f5;
+  --color-success: #22c55e;
+  --color-back-top: var(--color-accent);
+
+  --hero-gradient:
+    radial-gradient(circle at 12% 18%, rgba(47, 111, 237, 0.06), transparent 28%),
+    radial-gradient(circle at 82% 24%, rgba(176, 190, 220, 0.35), transparent 34%),
+    linear-gradient(180deg, #f7f8fc 0%, #eef1f7 58%, #e8ecf4 100%);
+  --experience-gradient:
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(47, 111, 237, 0.07), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 100%, rgba(28, 30, 38, 0.04), transparent 50%),
+    linear-gradient(180deg, #f7f8fc 0%, #eef2f9 100%);
+  --blob-gradient:
+    radial-gradient(circle at 48% 34%, rgba(255, 255, 255, 0.95) 0%, transparent 38%),
+    radial-gradient(circle at 52% 48%, rgba(232, 236, 245, 0.95) 0%, transparent 55%),
+    linear-gradient(160deg, #dfe6f4 0%, #c9d5ef 38%, #b7c6e8 68%, #a8b8df 100%);
+  --image-fade: linear-gradient(180deg, transparent, rgba(247, 248, 252, 0.55));
+  --slope-fade: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    var(--color-surface) 28%,
+    var(--color-surface) 100%
+  );
+  --input-dock-fade: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--color-surface) 28%);
+
+  --header-bg: color-mix(in srgb, var(--color-background) 92%, transparent);
+  --shadow-soft: 0 10px 30px rgba(28, 40, 80, 0.06);
+  --shadow-menu: 0 12px 28px rgba(28, 30, 38, 0.1), 0 2px 6px rgba(28, 30, 38, 0.04);
+  --shadow-accent: 0 8px 18px rgba(47, 111, 237, 0.22);
+  --shadow-back-top: 0 10px 22px rgba(47, 111, 237, 0.32);
+  --timeline-line: #c5d0e6;
+  --timeline-dot: #9eb2d8;
 
   --font-sans: var(--font-plus-jakarta), var(--font-noto-sans), var(--font-noto-kr), #{$font-sans};
   --font-display: var(--font-plus-jakarta), var(--font-noto-sans), var(--font-noto-kr), #{$font-display};
 
   --container-max: #{$container-max};
   --container-padding: #{$container-padding};
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: #0d1017;
+  --color-surface: #151922;
+  --color-foreground: #e8ebf2;
+  --color-muted: #9aa3b5;
+  --color-border: #2a3142;
+  --color-accent: #5b8cff;
+  --color-accent-hover: #7aa2ff;
+  --color-accent-soft: #1a2744;
+  --color-on-accent: #ffffff;
+  --color-subtle: #8b93a7;
+  --color-body-text: #b4bbc9;
+  --color-chip: #222836;
+  --color-chat-user: #1e2430;
+  --color-chat-border: #2a3142;
+  --color-section-muted: #11151d;
+  --color-success: #34d399;
+  --color-back-top: var(--color-accent);
+
+  --hero-gradient:
+    radial-gradient(circle at 12% 18%, rgba(91, 140, 255, 0.14), transparent 30%),
+    radial-gradient(circle at 82% 24%, rgba(60, 80, 130, 0.22), transparent 36%),
+    linear-gradient(180deg, #0d1017 0%, #121722 58%, #151a26 100%);
+  --experience-gradient:
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(91, 140, 255, 0.1), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 100%, rgba(0, 0, 0, 0.25), transparent 50%),
+    linear-gradient(180deg, #11151d 0%, #0d1017 100%);
+  --blob-gradient:
+    radial-gradient(circle at 48% 34%, rgba(80, 100, 150, 0.35) 0%, transparent 38%),
+    radial-gradient(circle at 52% 48%, rgba(40, 52, 80, 0.75) 0%, transparent 55%),
+    linear-gradient(160deg, #2a3550 0%, #1f2940 38%, #182033 68%, #141c2c 100%);
+  --image-fade: linear-gradient(180deg, transparent, rgba(13, 16, 23, 0.7));
+  --slope-fade: linear-gradient(
+    180deg,
+    rgba(21, 25, 34, 0) 0%,
+    var(--color-surface) 28%,
+    var(--color-surface) 100%
+  );
+  --input-dock-fade: linear-gradient(180deg, rgba(21, 25, 34, 0), var(--color-surface) 28%);
+
+  --header-bg: color-mix(in srgb, var(--color-background) 88%, transparent);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-menu: 0 12px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-accent: 0 8px 18px rgba(91, 140, 255, 0.28);
+  --shadow-back-top: 0 12px 26px rgba(91, 140, 255, 0.35);
+  --timeline-line: #3a455c;
+  --timeline-dot: #5a6a88;
 }
 
 html {
@@ -26,6 +117,9 @@ body {
   background-color: var(--color-surface);
   color: var(--color-foreground);
   font-family: var(--font-sans);
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
 }
 
 :focus-visible {

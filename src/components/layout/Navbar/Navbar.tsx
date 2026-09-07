@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button/Button";
 import { Container } from "@/components/ui/Container/Container";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher/LanguageSwitcher";
+import { ThemeToggle } from "@/components/ui/ThemeToggle/ThemeToggle";
 import { CloseIcon, MailIcon, MenuIcon } from "@/components/ui/icons/Icons";
 import styles from "./Navbar.module.scss";
 
@@ -62,6 +63,7 @@ export function Navbar() {
         </nav>
 
         <div className={styles.actions}>
+          <ThemeToggle />
           <LanguageSwitcher />
 
           <Button

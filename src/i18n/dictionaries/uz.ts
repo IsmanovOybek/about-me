@@ -4,6 +4,13 @@ export const uz: Dictionary = {
   language: {
     label: "Til",
   },
+  theme: {
+    toLight: "Yorug‘ rejimga o‘tish",
+    toDark: "Qorong‘u rejimga o‘tish",
+  },
+  common: {
+    backToTop: "Yuqoriga",
+  },
   nav: {
     home: "Bosh sahifa",
     portfolio: "Portfolio",
@@ -81,6 +88,41 @@ export const uz: Dictionary = {
           "Figma design system’ni scalable React componentlarga aylantirib, UI consistency saqladim va productivity’ni 25%+ oshirdim.",
           "Murakkab B2B SaaS muhitida continuous refactoring va performance optimization qilib, o‘qilish va app performance’ni 20% yaxshiladim.",
           "User feedback va business talablarni barqaror product feature’larga aylantiruvchi Agile jarayonni yetakladim — sprint delivery’ni 15% tezlashtirdim.",
+        ],
+      },
+    },
+  },
+  skills: {
+    eyebrow: "Imkoniyatlar",
+    title: "Nimalarni quraman",
+    subtitle:
+      "Production AI tizimlar, mustahkam backend va product-grade frontend — hammasini end-to-end o‘zim olib boraman.",
+    categories: {
+      ai: {
+        title: "AI / LLM Engineering",
+        points: [
+          "Avtomatik failover’li multi-provider LLM routing — shu sahifadagi chat shu ustida ishlaydi.",
+          "Private data ustida RAG pipeline: retrieval, prompt design, streaming, cost control.",
+          "Speech-to-text mahsulotlar: Whisper pipeline’lardan shipping voice-bookkeeping app.",
+          "Claude, Gemini va Vertex Imagen orqali job queue’lar orqasidagi image-generation orchestration.",
+        ],
+      },
+      backend: {
+        title: "Backend Systems",
+        points: [
+          "Production’da chidaydigan NestJS API: queues, retries, idempotency, state machines.",
+          "PostgreSQL va MongoDB’da data modeling, Redis bilan cache va real-time.",
+          "To‘lov va billing: usage’ga ulangan Stripe credit metering.",
+          "Deploy end to end: Docker, NGINX, Linux, AWS, CI/CD.",
+        ],
+      },
+      frontend: {
+        title: "Product Frontend",
+        points: [
+          "Server rendering va toza SEO’li Next.js App Router frontendlar.",
+          "Bitta codebase’dan ikkala store’ga chiqqan React Native va Expo app’lar.",
+          "Design-system intizomi: tokens, theming, accessibility — bu sayt sample.",
+          "TypeScript end to end — web, mobile va API uchun bitta til.",
         ],
       },
     },
