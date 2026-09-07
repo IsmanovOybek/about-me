@@ -1,15 +1,16 @@
-// Design tokens — adjust when brand/Figma is finalized
+// Careerster-inspired design tokens (from header reference)
 
-$color-background: #f7f5f2;
+$color-background: #f4f6fb;
 $color-surface: #ffffff;
-$color-foreground: #1a1a1a;
-$color-muted: #5c5c5c;
-$color-border: #e4e0d9;
-$color-accent: #1f4b3a;
-$color-accent-soft: #e8f0ec;
+$color-foreground: #1c1e26;
+$color-muted: #5a6072;
+$color-border: #e4e8f0;
+$color-accent: #2f6fed;
+$color-accent-hover: #245bd1;
+$color-accent-soft: #eaf1ff;
 
-$font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-$font-display: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$font-sans: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+$font-display: "Plus Jakarta Sans", "Segoe UI", sans-serif;
 
 $space-1: 0.25rem;
 $space-2: 0.5rem;
@@ -22,10 +23,10 @@ $space-8: 4rem;
 $space-9: 6rem;
 
 $radius-sm: 0.375rem;
-$radius-md: 0.75rem;
-$radius-lg: 1.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
 
-$container-max: 72rem;
+$container-max: 75rem;
 $container-padding: $space-5;
 
 $z-header: 100;
@@ -34,3 +35,5 @@ $z-modal: 300;
 
 $transition-fast: 150ms ease;
 $transition-base: 250ms ease;
+
+$header-height: 4.5rem;

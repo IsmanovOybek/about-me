@@ -8,10 +8,11 @@
   --color-muted: #{$color-muted};
   --color-border: #{$color-border};
   --color-accent: #{$color-accent};
+  --color-accent-hover: #{$color-accent-hover};
   --color-accent-soft: #{$color-accent-soft};
 
-  --font-sans: #{$font-sans};
-  --font-display: #{$font-display};
+  --font-sans: var(--font-plus-jakarta), #{$font-sans};
+  --font-display: var(--font-plus-jakarta), #{$font-display};
 
   --container-max: #{$container-max};
   --container-padding: #{$container-padding};
