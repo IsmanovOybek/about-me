@@ -48,4 +48,41 @@ export const ru: Dictionary = {
     pendingReply:
       "AI пока не подключён. UI чата готов — подключим обученную RAG-модель на следующем шаге.",
   },
+  experience: {
+    eyebrow: "Карьера",
+    title: "Опыт работы",
+    present: "наст.",
+    items: {
+      "exp-1": {
+        role: "Software AI Developer",
+        company: "Nova AI Labs",
+        highlights: [
+          "Создаю production RAG-пайплайны, LLM-оркестрацию и AI SaaS-функции для корейских команд и удалённых клиентов.",
+          "Спроектировал multi-provider LLM failover и циклы оценки retrieval на LangChain, FastAPI и Python — снизил hallucination-related issues примерно на 30%.",
+          "Собрал end-to-end AI-интерфейсы на Next.js со streaming-ответами и grounded citations — повысил релевантность ответов во внутреннем knowledge search.",
+          "Веду полный AI delivery loop — data prep, API design, prompt iteration и production monitoring — сократив time-to-feature с недель до дней.",
+        ],
+      },
+      "exp-2": {
+        role: "Full Stack Developer (Freelance)",
+        company: "PowerProp",
+        highlights: [
+          "Разработал высокопроизводительные веб-приложения и модульные API на NestJS, Next.js и GraphQL — ускорил загрузку на 35% и усилил масштабируемость архитектуры.",
+          "Реализовал custom interceptors, guards и JWT/OAuth 2.0 auth workflow — снизил риск несанкционированного доступа в enterprise-среде на 40%.",
+          "Ускорил multi-environment и GCP-деплой на 25% с Docker и Nginx reverse proxy, достигнув uptime 99.9%.",
+          "Интегрировал AI/LLM-инструменты в Git/GitHub workflow — сохранил высокое качество кода и ускорил delivery фич на 30%.",
+        ],
+      },
+      "exp-3": {
+        role: "Full Stack / Frontend Developer",
+        company: "Click Uzbekistan",
+        highlights: [
+          "Тесно сотрудничал с дизайнерами и backend-инженерами — повысил стабильность data integration и заметно улучшил UX.",
+          "Перевёл Figma design system в масштабируемые React-компоненты — улучшил UI-consistency и продуктивность более чем на 25%.",
+          "Провёл рефакторинг и оптимизацию в сложном B2B SaaS — повысил читаемость и производительность приложения на 20%.",
+          "Вёл Agile-процесс превращения feedback и бизнес-требований в стабильные фичи — ускорил sprint delivery на 15%.",
+        ],
+      },
+    },
+  },
 };

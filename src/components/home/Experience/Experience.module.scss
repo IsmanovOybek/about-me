@@ -1,0 +1,202 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: $space-9 0;
+  border-top: 1px solid rgba($color-border, 0.7);
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 0%, rgba(47, 111, 237, 0.07), transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 100%, rgba(28, 30, 38, 0.04), transparent 50%),
+    linear-gradient(180deg, #f7f8fc 0%, #eef2f9 100%);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-7;
+  max-width: 52rem;
+}
+
+.header {
+  display: grid;
+  gap: $space-2;
+}
+
+.eyebrow {
+  color: $color-accent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  color: $color-foreground;
+  font-family: $font-display;
+  font-size: clamp(1.9rem, 3.8vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.timeline {
+  display: grid;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 1rem 1.15rem;
+  padding-bottom: clamp(2rem, 4vw, 2.75rem);
+
+  &:last-child {
+    padding-bottom: 0;
+
+    .spine {
+      opacity: 0;
+    }
+  }
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1.5rem minmax(0, 1fr);
+    gap: 1rem 1.5rem;
+  }
+}
+
+.rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.4rem;
+}
+
+.dot {
+  position: relative;
+  z-index: 1;
+  width: 0.72rem;
+  height: 0.72rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: $color-surface;
+  border: 2px solid #9eb2d8;
+  box-shadow: 0 0 0 4px rgba(247, 248, 252, 0.9);
+  transition: border-color $transition-base, box-shadow $transition-base;
+}
+
+.dotCurrent {
+  border-color: $color-accent;
+  background: $color-accent;
+  box-shadow:
+    0 0 0 4px rgba(47, 111, 237, 0.12),
+    0 0 0 8px rgba(247, 248, 252, 0.9);
+}
+
+.spine {
+  flex: 1;
+  width: 1px;
+  margin-top: 0.45rem;
+  background: linear-gradient(180deg, #c5d0e6 0%, rgba(197, 208, 230, 0.15) 100%);
+}
+
+.body {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: 0.1rem 0 0.25rem;
+}
+
+.meta {
+  display: grid;
+  gap: 0.65rem;
+
+  @include respond-to(tablet) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1.25rem;
+  }
+}
+
+.heading {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.company {
+  color: $color-foreground;
+  font-family: $font-display;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.role {
+  color: $color-muted;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.aside {
+  display: grid;
+  gap: 0.2rem;
+
+  @include respond-to(tablet) {
+    text-align: right;
+    justify-items: end;
+  }
+}
+
+.period {
+  color: $color-foreground;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.location {
+  color: $color-muted;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.highlights {
+  display: grid;
+  gap: 0.7rem;
+  color: #4b5568;
+  font-size: 0.9rem;
+  line-height: 1.65;
+
+  li {
+    position: relative;
+    padding-left: 1rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 1px;
+      background: $color-accent;
+      opacity: 0.75;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.tech {
+  color: #7a8499;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
