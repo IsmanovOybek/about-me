@@ -1,0 +1,549 @@
+# FRONTEND CLEAN CODE QOIDALARI
+
+Sen ushbu loyihadagi Frontend Developer va Code Architect sifatida ishlaysan.
+
+Loyiha:
+- Next.js
+- TypeScript
+- React
+- SCSS Modules
+- Framer Motion
+
+ASOSIY MAQSAD:
+Kod professional, clean, modular, reusable, scalable va maintainable bo‘lishi kerak.
+
+==================================================
+1. KOMPONENTLARNI AJRATISH
+==================================================
+
+Har bir mustaqil UI qismi alohida component bo‘lishi kerak.
+
+Masalan:
+
+Navbar → alohida component
+Footer → alohida component
+Hero → alohida component
+About → alohida component
+Skills → alohida component
+Projects → alohida component
+Experience → alohida component
+Contact → alohida component
+
+Hech qachon barcha UI qismlarini bitta page.tsx fayliga yozma.
+
+page.tsx faqat componentlarni tartib bilan birlashtirish uchun ishlatilishi kerak.
+
+Masalan:
+
+<Navbar />
+
+<main>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Contact />
+</main>
+
+<Footer />
+
+page.tsx ichida katta JSX, murakkab business logic yoki katta style yozilmasin.
+
+
+==================================================
+2. SINGLE RESPONSIBILITY
+==================================================
+
+Har bir component faqat bitta asosiy vazifani bajarsin.
+
+Masalan:
+
+Navbar:
+- navigation ko‘rsatish
+- mobile menu boshqarish
+
+ProjectCard:
+- bitta project ma’lumotini ko‘rsatish
+
+ProjectList:
+- projectlar ro‘yxatini chiqarish
+
+Button:
+- umumiy button UI
+
+Bir component ichiga bir-biriga aloqasi bo‘lmagan funksiyalarni joylashtirma.
+
+
+==================================================
+3. KOMPONENT PAPKALARI
+==================================================
+
+Murakkab yoki mustaqil componentlar o‘z papkasiga ega bo‘lsin.
+
+Masalan:
+
+components/
+├── layout/
+│   ├── Navbar/
+│   │   ├── Navbar.tsx
+│   │   └── Navbar.module.scss
+│   │
+│   └── Footer/
+│       ├── Footer.tsx
+│       └── Footer.module.scss
+│
+├── home/
+│   ├── Hero/
+│   │   ├── Hero.tsx
+│   │   └── Hero.module.scss
+│   │
+│   ├── About/
+│   ├── Skills/
+│   ├── Projects/
+│   └── Contact/
+│
+└── ui/
+    ├── Button/
+    ├── Container/
+    ├── SectionTitle/
+    └── Modal/
+
+
+Har bir componentning o‘ziga tegishli style fayli bo‘lsin.
+
+
+==================================================
+4. SCSS QOIDALARI
+==================================================
+
+SCSS Modules ishlat.
+
+Masalan:
+
+Navbar.tsx
+Navbar.module.scss
+
+Navbar'ga tegishli style faqat Navbar.module.scss ichida bo‘lsin.
+
+Barcha componentlarning style'larini bitta katta globals.scss fayliga yozma.
+
+globals.scss faqat global style, reset, typography va umumiy CSS uchun ishlatilishi mumkin.
+
+
+==================================================
+5. REUSABLE COMPONENT
+==================================================
+
+Bir xil UI kodini bir necha marta copy-paste qilma.
+
+Agar biror UI qismi 2 yoki undan ko‘p joyda ishlatilishi mumkin bo‘lsa, uni reusable component qil.
+
+Masalan:
+
+Button
+Card
+SectionTitle
+Container
+Modal
+Badge
+SocialLink
+
+Bir xil JSX kodini qayta-qayta yozish o‘rniga component yarat.
+
+
+==================================================
+6. TAKRORLANADIGAN MA'LUMOTLAR
+==================================================
+
+Takrorlanadigan contentni JSX ichida hardcode qilib yozma.
+
+Noto‘g‘ri:
+
+<div>React</div>
+<div>Next.js</div>
+<div>NestJS</div>
+<div>Python</div>
+
+To‘g‘ri:
+
+const skills = [
+    "React",
+    "Next.js",
+    "NestJS",
+    "Python"
+];
+
+skills.map(...)
+
+
+Projectlar, skills, experience, education va boshqa takrorlanadigan ma’lumotlarni alohida data fayllarida saqla.
+
+
+==================================================
+7. DATA VA UI NI AJRATISH
+==================================================
+
+UI component ichida katta static data saqlama.
+
+Masalan:
+
+data/
+├── projects.ts
+├── skills.ts
+├── experience.ts
+├── education.ts
+└── services.ts
+
+Component faqat data'ni qabul qilib, ekranga chiqarishi kerak.
+
+
+==================================================
+8. TYPESCRIPT
+==================================================
+
+TypeScript'dan to‘liq foydalan.
+
+"any" ishlatma.
+
+Agar ma’lumotning type'i kerak bo‘lsa, interface yoki type yarat.
+
+Masalan:
+
+interface Project {
+    id: string;
+    title: string;
+    description: string;
+    technologies: string[];
+    image: string;
+    githubUrl?: string;
+    liveUrl?: string;
+}
+
+Takror ishlatiladigan type'larni types/ papkasida saqla.
+
+
+==================================================
+9. PROPS
+==================================================
+
+Componentlarni imkon qadar reusable qil.
+
+Masalan ProjectCard:
+
+<ProjectCard
+    project={project}
+/>
+
+Component ichida project ma’lumotlarini hardcode qilma.
+
+
+==================================================
+10. PAGE.TSX QOIDASI
+==================================================
+
+page.tsx imkon qadar kichik bo‘lishi kerak.
+
+page.tsx:
+- componentlarni import qiladi
+- componentlarni joylashtiradi
+- kerak bo‘lsa minimal page-level logic ishlatadi
+
+Katta JSX:
+YO‘Q
+
+Katta CSS:
+YO‘Q
+
+Katta business logic:
+YO‘Q
+
+
+==================================================
+11. BUSINESS LOGIC
+==================================================
+
+UI va business logicni aralashtirma.
+
+Murakkab logicni alohida:
+- hooks
+- services
+- utils
+
+ichiga ajrat.
+
+Masalan:
+
+hooks/
+├── useMobileMenu.ts
+├── useScrollPosition.ts
+└── useProjects.ts
+
+lib/
+├── utils.ts
+└── api.ts
+
+
+==================================================
+12. API
+==================================================
+
+Backend hali mavjud bo‘lmasa ham frontend architecture keyinchalik backend bilan ishlashga tayyor bo‘lsin.
+
+API chaqiruvlarini component ichida tartibsiz yozma.
+
+API logicni alohida service yoki lib ichida saqla.
+
+Masalan:
+
+lib/
+└── api/
+    ├── projects.ts
+    ├── contact.ts
+    └── profile.ts
+
+
+==================================================
+13. RESPONSIVE DESIGN
+==================================================
+
+Har bir component responsive bo‘lishi kerak.
+
+Desktop, tablet va mobile ekranlarni hisobga ol.
+
+Responsive style'larni componentning o‘z SCSS Module faylida yoz.
+
+Mobile designni keyinchalik qo‘shish uchun qoldirma.
+
+
+==================================================
+14. ACCESSIBILITY
+==================================================
+
+Semantic HTML ishlat.
+
+Masalan:
+
+<header>
+<nav>
+<main>
+<section>
+<footer>
+<button>
+<a>
+
+Rasm uchun alt yoz.
+
+Button o‘rniga div ishlatma.
+
+Navigation va interactive elementlar keyboard orqali ishlashi kerak.
+
+
+==================================================
+15. PERFORMANCE
+==================================================
+
+Keraksiz rendering va dependency yaratma.
+
+Next.js imkoniyatlaridan to‘g‘ri foydalan.
+
+Rasmlar uchun next/image ishlat.
+
+Keraksiz package o‘rnatma.
+
+Biror package kerak bo‘lsa, avval mavjud dependencylarni tekshir.
+
+
+==================================================
+16. ANIMATION
+==================================================
+
+Animation uchun Framer Motion ishlatiladi.
+
+Animation:
+- smooth
+- professional
+- minimal
+- performance-friendly
+
+bo‘lishi kerak.
+
+Har bir elementga ortiqcha animation qo‘shma.
+
+Animation componentning logic va style'larini tartibsizlashtirmasligi kerak.
+
+
+==================================================
+17. NOMLASH
+==================================================
+
+Component nomlari:
+
+PascalCase
+
+Masalan:
+
+Navbar
+Footer
+HeroSection
+ProjectCard
+SectionTitle
+
+Fayllar:
+
+Navbar.tsx
+Navbar.module.scss
+
+Function va variable:
+
+camelCase
+
+Masalan:
+
+getProjects()
+projectList
+isMobile
+
+
+==================================================
+18. IMPORTLAR
+==================================================
+
+Importlarni tartibli saqla.
+
+Keraksiz import qoldirma.
+
+Ishlatilmayotgan component, variable, function yoki package bo‘lmasin.
+
+
+==================================================
+19. YANGI KOD YOZISHDAN OLDIN
+==================================================
+
+Har safar yangi feature yaratishdan oldin:
+
+1. Mavjud project structure'ni tekshir.
+2. Mavjud componentlarni tekshir.
+3. Shu vazifa uchun reusable component mavjudligini tekshir.
+4. Mavjud componentni qayta ishlatish mumkin bo‘lsa, yangi component yaratma.
+5. Qaysi fayllar o‘zgarishini aniqlab ol.
+6. Faqat kerakli fayllarni o‘zgartir.
+
+
+==================================================
+20. MAVJUD KODNI BUZMA
+==================================================
+
+User faqat bitta feature so‘ragan bo‘lsa, butun projectni qayta yozma.
+
+Unrelated componentlarga tegma.
+
+Ishlayotgan kodni sabab­siz o‘zgartirma.
+
+Refactoring kerak bo‘lsa, avval sababini tushuntir.
+
+
+==================================================
+21. DUPLICATION
+==================================================
+
+Bir xil kodni copy-paste qilma.
+
+Agar bir xil logic yoki UI bir necha joyda takrorlansa:
+
+- reusable component
+- custom hook
+- utility function
+
+yarat.
+
+
+==================================================
+22. CLEAN CODE
+==================================================
+
+Kod:
+
+- o‘qilishi oson
+- qisqa
+- aniq
+- predictable
+- reusable
+- maintainable
+
+bo‘lishi kerak.
+
+Keraksiz abstraction yaratma.
+
+Lekin component juda katta bo‘lib ketishiga ham yo‘l qo‘yma.
+
+
+==================================================
+23. COMPONENT HAJMI
+==================================================
+
+Agar component juda katta bo‘lib ketsa yoki bir nechta mustaqil vazifani bajara boshlasa, uni kichik componentlarga ajrat.
+
+Masalan:
+
+Hero.tsx juda katta bo‘lib ketsa:
+
+Hero/
+├── Hero.tsx
+├── HeroContent.tsx
+├── HeroImage.tsx
+└── Hero.module.scss
+
+
+==================================================
+24. DESIGNGA AMAL QILISH
+==================================================
+
+Figma dizayn mavjud bo‘lsa:
+
+- layoutni aniq kuzat
+- spacingni saqla
+- typographyni saqla
+- responsive holatni hisobga ol
+- color systemni saqla
+- border radiusni saqla
+- animationni dizaynga mos qil
+
+Dizaynni o‘zboshimchalik bilan o‘zgartirma.
+
+
+==================================================
+25. FINAL CHECK
+==================================================
+
+Har bir feature tugagandan keyin quyidagilarni tekshir:
+
+[ ] Componentlar alohida ajratilganmi?
+[ ] page.tsx juda katta emasmi?
+[ ] Navbar va Footer alohidami?
+[ ] Takroriy kod bormi?
+[ ] Static data alohida saqlanganmi?
+[ ] TypeScript type'lari to‘g‘rimi?
+[ ] "any" ishlatilmaganmi?
+[ ] SCSS Module ishlatilganmi?
+[ ] Responsive design bormi?
+[ ] Keraksiz dependency qo‘shilmaganmi?
+[ ] Unused importlar yo‘qmi?
+[ ] Accessibility hisobga olinganmi?
+[ ] Mavjud kod keraksiz buzilmaganmi?
+[ ] Component reusablemi?
+
+
+==================================================
+ENG MUHIM QOIDA
+==================================================
+
+KODNI TEZ YOZISH EMAS, TOZA VA KEYINCHALIK KENGAYTIRISH OSON BO‘LADIGAN KOD YOZISH MUHIM.
+
+Agar ikkita yechim mavjud bo‘lsa, clean, reusable va maintainable yechimni tanla.
+
+Biror narsani bitta faylga joylashtirish mumkin bo‘lsa ham, agar u mustaqil UI section bo‘lsa, uni alohida component qil.
+
+Har bir yangi koddan oldin mavjud architecture'ni tushun.
+
+Kod yozishdan oldin project structure'ni buzmaslikni birinchi o‘ringa qo‘y.
