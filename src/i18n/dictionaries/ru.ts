@@ -127,4 +127,49 @@ export const ru: Dictionary = {
       },
     },
   },
+  projects: {
+    eyebrow: "Избранные работы",
+    title: "Личные проекты",
+    viewCaseStudy: "Смотреть кейс →",
+    allProjects: "Все проекты →",
+    items: {
+      "static-engine": {
+        description:
+          "AI SaaS для рекламного креатива для US-клиента — три AI-провайдера с failover, Stripe credit billing и интеграции Meta/Shopify, собрано end to end одним инженером.",
+      },
+      mashaqat: {
+        description:
+          "Платформа live-образования с подпиской на курсы FullStack, DevOps и AI Engineering — фокус на реальных навыках, а не только на видео.",
+      },
+      autocare: {
+        description:
+          "Разработал комплексную автомобильную marketplace-платформу с продвинутой admin-панелью.",
+      },
+      "nusret-library": {
+        description:
+          "Профессиональный цифровой репозиторий для сбора и управления книгами.",
+      },
+      "nusret-admin": {
+        description:
+          "Построил стабильный и масштабируемый admin-портал для управления пользователями и продуктами.",
+      },
+      "telegram-quiz-bot": {
+        description:
+          "Реализовал интерактивного quiz-бота на Node.js и OpenAI API.",
+      },
+    },
+  },
+  contact: {
+    title: "Связаться",
+    address: "Адрес",
+    email: "E-mail",
+    phone: "Телефон",
+    namePlaceholder: "Ваше имя*",
+    emailPlaceholder: "Ваш email*",
+    messagePlaceholder: "Сообщение",
+    submit: "Отправить",
+    sending: "Отправка...",
+    success: "Сообщение отправлено. Я скоро отвечу.",
+    error: "Что-то пошло не так. Попробуйте ещё раз.",
+  },
 };

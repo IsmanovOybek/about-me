@@ -1,5 +1,3 @@
-import { apiClient, getApiBaseUrl } from "./client";
-
 export interface ContactPayload {
   name: string;
   email: string;
@@ -14,17 +12,22 @@ export interface ContactResponse {
 export async function sendContactMessage(
   payload: ContactPayload,
 ): Promise<ContactResponse> {
-  if (!getApiBaseUrl()) {
-    // Placeholder until FastAPI contact endpoint is connected.
-    console.info("Contact form payload (static mode):", payload);
+  const response = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const data = (await response.json()) as ContactResponse;
+
+  if (!response.ok) {
     return {
-      success: true,
-      message: "Message captured locally. Connect NEXT_PUBLIC_API_URL to send.",
+      success: false,
+      message: data.message ?? "Failed to send message.",
     };
   }
 
-  return apiClient<ContactResponse>("/api/contact", {
-    method: "POST",
-    body: payload,
-  });
+  return data;
 }

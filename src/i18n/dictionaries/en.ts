@@ -75,6 +75,31 @@ export interface Dictionary {
       }
     >;
   };
+  projects: {
+    eyebrow: string;
+    title: string;
+    viewCaseStudy: string;
+    allProjects: string;
+    items: Record<
+      string,
+      {
+        description: string;
+      }
+    >;
+  };
+  contact: {
+    title: string;
+    address: string;
+    email: string;
+    phone: string;
+    namePlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
+    submit: string;
+    sending: string;
+    success: string;
+    error: string;
+  };
 }
 
 export const en: Dictionary = {
@@ -203,5 +228,50 @@ export const en: Dictionary = {
         ],
       },
     },
+  },
+  projects: {
+    eyebrow: "Selected work",
+    title: "Personal Projects",
+    viewCaseStudy: "View case study →",
+    allProjects: "All projects →",
+    items: {
+      "static-engine": {
+        description:
+          "An AI ad-creative SaaS for a US client — three AI providers behind automatic failover, Stripe credit billing, and Meta/Shopify integrations, built end to end by one engineer.",
+      },
+      mashaqat: {
+        description:
+          "A live education platform with subscription courses in FullStack, DevOps, and AI Engineering — designed for learners who ship real skills, not just watch videos.",
+      },
+      autocare: {
+        description:
+          "Built a full automobile marketplace platform with an advanced admin panel for listings, users, and operations.",
+      },
+      "nusret-library": {
+        description:
+          "A professional digital repository for collecting and managing books with a clean, modern storefront experience.",
+      },
+      "nusret-admin": {
+        description:
+          "Built a stable, scalable admin portal for user and product management across the Nusret ecosystem.",
+      },
+      "telegram-quiz-bot": {
+        description:
+          "An interactive Telegram quiz bot powered by Node.js and the OpenAI API — quizzes, scoring, and conversational flow.",
+      },
+    },
+  },
+  contact: {
+    title: "Contact Me",
+    address: "Address",
+    email: "E-mail",
+    phone: "Phone",
+    namePlaceholder: "Your Name*",
+    emailPlaceholder: "Your Email*",
+    messagePlaceholder: "Message",
+    submit: "Submit Message",
+    sending: "Sending...",
+    success: "Message sent. I’ll get back to you soon.",
+    error: "Something went wrong. Please try again.",
   },
 };

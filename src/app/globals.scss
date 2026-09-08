@@ -42,6 +42,12 @@
     var(--color-surface) 100%
   );
   --input-dock-fade: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--color-surface) 28%);
+  --projects-gradient:
+    radial-gradient(ellipse 55% 45% at 100% 0%, rgba(47, 111, 237, 0.06), transparent 55%),
+    var(--color-surface);
+  --contact-gradient:
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(47, 111, 237, 0.07), transparent 55%),
+    var(--color-section-muted);
 
   --header-bg: color-mix(in srgb, var(--color-background) 92%, transparent);
   --shadow-soft: 0 10px 30px rgba(28, 40, 80, 0.06);
@@ -99,6 +105,12 @@ html[data-theme="dark"] {
     var(--color-surface) 100%
   );
   --input-dock-fade: linear-gradient(180deg, rgba(21, 25, 34, 0), var(--color-surface) 28%);
+  --projects-gradient:
+    radial-gradient(ellipse 55% 45% at 100% 0%, rgba(91, 140, 255, 0.1), transparent 55%),
+    var(--color-surface);
+  --contact-gradient:
+    radial-gradient(ellipse 60% 50% at 0% 0%, rgba(91, 140, 255, 0.1), transparent 55%),
+    var(--color-section-muted);
 
   --header-bg: color-mix(in srgb, var(--color-background) 88%, transparent);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.35);

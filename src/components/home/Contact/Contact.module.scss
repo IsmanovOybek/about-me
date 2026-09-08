@@ -1,0 +1,165 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: $space-9 0;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+  background: var(--contact-gradient);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+}
+
+.infoCol {
+  display: grid;
+  gap: $space-6;
+}
+
+.title {
+  color: var(--color-foreground);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.info {
+  display: grid;
+  gap: $space-6;
+}
+
+.details {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.row {
+  display: grid;
+  gap: 0.35rem;
+
+  dt {
+    color: var(--color-subtle);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  dd {
+    color: var(--color-muted);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+
+    a {
+      transition: color $transition-fast;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.formCol {
+  width: 100%;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: block;
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 0.55rem;
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color $transition-fast,
+    box-shadow $transition-fast;
+
+  &::placeholder {
+    color: var(--color-subtle);
+  }
+
+  &:focus {
+    border-color: color-mix(in srgb, var(--color-accent) 55%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 12%, transparent);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.input {
+  min-height: 3.15rem;
+  padding: 0.85rem 1rem;
+}
+
+.textarea {
+  min-height: 9.5rem;
+  padding: 0.95rem 1rem;
+  resize: vertical;
+  line-height: 1.55;
+}
+
+.submit {
+  justify-self: start;
+  min-height: 3rem;
+  padding-inline: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+.statusSuccess,
+.statusError {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.statusSuccess {
+  color: var(--color-success);
+}
+
+.statusError {
+  color: #dc2626;
+}
+
+.srOnly {
+  @include visually-hidden;
+}

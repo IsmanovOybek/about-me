@@ -13,6 +13,7 @@ export interface ButtonProps {
   ariaLabel?: string;
   href?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -24,6 +25,7 @@ export function Button({
   ariaLabel,
   href,
   type = "button",
+  disabled = false,
   onClick,
 }: ButtonProps) {
   const classNames = cn(styles.button, styles[variant], className);
@@ -41,6 +43,7 @@ export function Button({
         className={classNames}
         aria-label={ariaLabel}
         onClick={onClick}
+        aria-disabled={disabled}
       >
         {content}
       </Link>
@@ -53,6 +56,7 @@ export function Button({
       className={classNames}
       onClick={onClick}
       aria-label={ariaLabel}
+      disabled={disabled}
     >
       {content}
     </button>

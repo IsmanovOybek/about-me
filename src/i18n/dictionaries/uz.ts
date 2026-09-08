@@ -127,4 +127,49 @@ export const uz: Dictionary = {
       },
     },
   },
+  projects: {
+    eyebrow: "Tanlangan ishlar",
+    title: "Shaxsiy loyihalar",
+    viewCaseStudy: "Case study ko‘rish →",
+    allProjects: "Barcha loyihalar →",
+    items: {
+      "static-engine": {
+        description:
+          "US mijoz uchun AI ad-creative SaaS — avtomatik failover’li 3 ta AI provider, Stripe credit billing va Meta/Shopify integratsiyalar, bitta engineer tomonidan end-to-end qurilgan.",
+      },
+      mashaqat: {
+        description:
+          "FullStack, DevOps va AI Engineering kurslari bilan live ta’lim platformasi — faqat video emas, real skill’larga mo‘ljallangan.",
+      },
+      autocare: {
+        description:
+          "Ilg‘or admin panel bilan to‘liq avtomobil marketplace platformasini ishlab chiqdim.",
+      },
+      "nusret-library": {
+        description:
+          "Kitoblarni yig‘ish va boshqarish uchun professional raqamli repository.",
+      },
+      "nusret-admin": {
+        description:
+          "Foydalanuvchi va mahsulotlarni boshqarish uchun barqaror, scalable Admin portal qurdim.",
+      },
+      "telegram-quiz-bot": {
+        description:
+          "Node.js va OpenAI API bilan interaktiv quiz bot ishlab chiqdim.",
+      },
+    },
+  },
+  contact: {
+    title: "Bog‘lanish",
+    address: "Manzil",
+    email: "E-mail",
+    phone: "Telefon",
+    namePlaceholder: "Ismingiz*",
+    emailPlaceholder: "Emailingiz*",
+    messagePlaceholder: "Xabar",
+    submit: "Xabar yuborish",
+    sending: "Yuborilmoqda...",
+    success: "Xabar yuborildi. Tez orada javob beraman.",
+    error: "Xatolik yuz berdi. Qayta urinib ko‘ring.",
+  },
 };

@@ -127,4 +127,48 @@ export const ko: Dictionary = {
       },
     },
   },
+  projects: {
+    eyebrow: "작업물",
+    title: "개인 프로젝트",
+    viewCaseStudy: "케이스 스터디 보기 →",
+    allProjects: "모든 프로젝트 →",
+    items: {
+      "static-engine": {
+        description:
+          "미국 클라이언트를 위한 AI 광고 크리에이티브 SaaS — 자동 페일오버가 있는 3개 AI 프로바이더, Stripe 크레딧 빌링, Meta/Shopify 연동까지 혼자 end-to-end로 구축했습니다.",
+      },
+      mashaqat: {
+        description:
+          "FullStack, DevOps, AI Engineering 구독형 라이브 교육 플랫폼 — 영상만 보는 게 아니라 실전 스킬을 쌓도록 설계했습니다.",
+      },
+      autocare: {
+        description:
+          "고도화된 관리자 패널을 포함한 종합 자동차 마켓플레이스 플랫폼을 개발하였습니다.",
+      },
+      "nusret-library": {
+        description: "도서 수집 및 관리를 위한 전문 디지털 리포지토리입니다.",
+      },
+      "nusret-admin": {
+        description:
+          "사용자 및 제품 관리를 위한 안정적이고 확장 가능한 관리자(Admin) 포털을 구축하였습니다.",
+      },
+      "telegram-quiz-bot": {
+        description:
+          "Node.js와 OpenAI API를 활용하여 개발한 인터랙티브 퀴즈 봇을 구현하였습니다.",
+      },
+    },
+  },
+  contact: {
+    title: "연락하기",
+    address: "주소",
+    email: "이메일",
+    phone: "전화",
+    namePlaceholder: "이름*",
+    emailPlaceholder: "이메일*",
+    messagePlaceholder: "메시지",
+    submit: "메시지 보내기",
+    sending: "전송 중...",
+    success: "메시지가 전송되었습니다. 곧 답변드리겠습니다.",
+    error: "문제가 발생했습니다. 다시 시도해 주세요.",
+  },
 };
