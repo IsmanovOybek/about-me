@@ -2,10 +2,12 @@
 
 import { useCallback, useState } from "react";
 import type { ChatMessage } from "@/types";
+import type { Locale } from "@/i18n";
 import { sendChatMessage } from "@/lib/api/chat";
 
 interface UseAskAiChatOptions {
-  pendingReply: string;
+  locale: Locale;
+  fallbackReply: string;
 }
 
 interface UseAskAiChatResult {
@@ -15,7 +17,8 @@ interface UseAskAiChatResult {
 }
 
 export function useAskAiChat({
-  pendingReply,
+  locale,
+  fallbackReply,
 }: UseAskAiChatOptions): UseAskAiChatResult {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isSending, setIsSending] = useState(false);
@@ -37,11 +40,11 @@ export function useAskAiChat({
       setIsSending(true);
 
       try {
-        const reply = await sendChatMessage(trimmed);
+        const reply = await sendChatMessage(trimmed, locale);
         const assistantMessage: ChatMessage = {
           id: `assistant-${Date.now()}`,
           role: "assistant",
-          content: reply === "__PENDING_AI__" ? pendingReply : reply,
+          content: reply || fallbackReply,
         };
         setMessages((prev) => [...prev, assistantMessage]);
       } catch {
@@ -50,14 +53,14 @@ export function useAskAiChat({
           {
             id: `assistant-error-${Date.now()}`,
             role: "assistant",
-            content: pendingReply,
+            content: fallbackReply,
           },
         ]);
       } finally {
         setIsSending(false);
       }
     },
-    [isSending, pendingReply],
+    [fallbackReply, isSending, locale],
   );
 
   return { messages, isSending, sendMessage };

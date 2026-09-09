@@ -16,8 +16,6 @@ export const ko: Dictionary = {
     portfolio: "포트폴리오",
     services: "서비스",
     resume: "이력서",
-    pricing: "가격",
-    about: "소개",
     contacts: "연락처",
     hireMe: "채용하기!",
     openMenu: "메뉴 열기",
@@ -43,7 +41,7 @@ export const ko: Dictionary = {
     subtitle:
       "AI SaaS, RAG 파이프라인, LLM 오케스트레이션 — 한국 제품팀과 전 세계 원격 클라이언트를 위해.",
     intro:
-      "말만 믿지 마세요. 채팅에게 물어보세요 — 제가 만든 RAG 파이프라인과 multi-provider failover로 동작합니다.",
+      "Kyler에게 물어보세요 — 프로필, 경력, 스택, 프로젝트. 연결되면 portfolio RAG API로 답합니다.",
     placeholder: "Kyler에 대해 무엇이든 물어보세요...",
     send: "메시지 보내기",
     suggestions: {
@@ -53,7 +51,7 @@ export const ko: Dictionary = {
       seoul: "왜 한국에서 그를 채용해야 하나요?",
     },
     pendingReply:
-      "AI는 아직 연결되지 않았습니다. 채팅 UI는 준비되어 있고, 학습된 RAG 모델을 다음에 연결합니다.",
+      "포트폴리오 지식 베이스에서 정확한 답을 찾지 못했습니다. 프로젝트, 경력 또는 스택에 대해 물어보세요.",
   },
   experience: {
     eyebrow: "커리어",

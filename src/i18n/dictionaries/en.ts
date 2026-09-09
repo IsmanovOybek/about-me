@@ -14,8 +14,6 @@ export interface Dictionary {
     portfolio: string;
     services: string;
     resume: string;
-    pricing: string;
-    about: string;
     contacts: string;
     hireMe: string;
     openMenu: string;
@@ -118,8 +116,6 @@ export const en: Dictionary = {
     portfolio: "Portfolio",
     services: "Services",
     resume: "Resume",
-    pricing: "Pricing",
-    about: "About Me",
     contacts: "Contacts",
     hireMe: "Hire Me!",
     openMenu: "Open menu",
@@ -145,7 +141,7 @@ export const en: Dictionary = {
     subtitle:
       "AI SaaS platforms, RAG pipelines and LLM orchestration — for Korean product teams and remote clients worldwide.",
     intro:
-      "Don't take my word for it. Ask the chat — it runs on a RAG pipeline I built, with multi-provider failover.",
+      "Ask about Kyler — profile, experience, tech stack, and projects. Answers run through the portfolio RAG API when connected.",
     placeholder: "Ask anything about Kyler...",
     send: "Send message",
     suggestions: {
@@ -155,7 +151,7 @@ export const en: Dictionary = {
       seoul: "Why hire him in Korea?",
     },
     pendingReply:
-      "AI is not connected yet. The chat UI is ready — we will plug in the trained RAG model next.",
+      "I couldn't answer that right now. Try asking about his projects, experience, or stack.",
   },
   experience: {
     eyebrow: "Career path",

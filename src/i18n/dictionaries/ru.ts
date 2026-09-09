@@ -16,8 +16,6 @@ export const ru: Dictionary = {
     portfolio: "Портфолио",
     services: "Услуги",
     resume: "Резюме",
-    pricing: "Цены",
-    about: "Обо мне",
     contacts: "Контакты",
     hireMe: "Нанять!",
     openMenu: "Открыть меню",
@@ -43,7 +41,7 @@ export const ru: Dictionary = {
     subtitle:
       "AI SaaS, RAG-пайплайны и LLM-оркестрация — для корейских продуктовых команд и удалённых клиентов по всему миру.",
     intro:
-      "Не верьте на слово. Спросите чат — он работает на RAG-пайплайне, который я собрал, с multi-provider failover.",
+      "Спросите о Kyler — профиль, опыт, стек и проекты. При подключении ответы идут через portfolio RAG API.",
     placeholder: "Спросите что угодно о Kyler...",
     send: "Отправить сообщение",
     suggestions: {
@@ -53,7 +51,7 @@ export const ru: Dictionary = {
       seoul: "Почему нанять его в Корее?",
     },
     pendingReply:
-      "AI пока не подключён. UI чата готов — подключим обученную RAG-модель на следующем шаге.",
+      "Не нашёл точный ответ в базе знаний портфолио. Спросите про проекты, опыт или стек.",
   },
   experience: {
     eyebrow: "Карьера",

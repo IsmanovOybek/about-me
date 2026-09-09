@@ -14,9 +14,10 @@ import { SuggestionCard } from "./SuggestionCard";
 import styles from "./AskAi.module.scss";
 
 export function AskAi() {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const { messages, isSending, sendMessage } = useAskAiChat({
-    pendingReply: t.askAi.pendingReply,
+    locale,
+    fallbackReply: t.askAi.pendingReply,
   });
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);

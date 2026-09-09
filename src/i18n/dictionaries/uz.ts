@@ -16,8 +16,6 @@ export const uz: Dictionary = {
     portfolio: "Portfolio",
     services: "Xizmatlar",
     resume: "Rezyume",
-    pricing: "Narxlar",
-    about: "Men haqimda",
     contacts: "Aloqa",
     hireMe: "Band qiling!",
     openMenu: "Menyuni ochish",
@@ -43,7 +41,7 @@ export const uz: Dictionary = {
     subtitle:
       "AI SaaS, RAG pipeline va LLM orchestration — Koreya product jamoalari va dunyo bo‘ylab remote mijozlar uchun.",
     intro:
-      "Faqat so‘zimga ishonmang. Chatdan so‘rang — u men qurgan RAG pipeline va multi-provider failover bilan ishlaydi.",
+      "Kyler haqida so‘rang — profil, tajriba, stack va loyihalar. Ulanganda javoblar portfolio RAG API orqali keladi.",
     placeholder: "Kyler haqida istalgan savol bering...",
     send: "Xabar yuborish",
     suggestions: {
@@ -53,7 +51,7 @@ export const uz: Dictionary = {
       seoul: "Nega Koreyada uni yollash kerak?",
     },
     pendingReply:
-      "AI hali ulanmagan. Chat UI tayyor — keyingi bosqichda train qilingan RAG modelni ulaymiz.",
+      "Portfolio bilim bazasidan aniq javob topilmadi. Loyihalar, tajriba yoki stack haqida so‘rang.",
   },
   experience: {
     eyebrow: "Karyera",

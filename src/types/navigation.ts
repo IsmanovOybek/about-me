@@ -3,8 +3,6 @@ export type NavItemId =
   | "portfolio"
   | "services"
   | "resume"
-  | "pricing"
-  | "about"
   | "contacts";
 
 export interface NavItem {
