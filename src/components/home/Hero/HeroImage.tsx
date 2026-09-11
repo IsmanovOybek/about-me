@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Profile } from "@/types";
+import { useLocale } from "@/providers/LocaleProvider";
 import styles from "./Hero.module.scss";
 
 interface HeroImageProps {
@@ -10,6 +11,8 @@ interface HeroImageProps {
 }
 
 export function HeroImage({ profile }: HeroImageProps) {
+  const { t } = useLocale();
+
   return (
     <motion.div
       className={styles.visual}
@@ -22,7 +25,7 @@ export function HeroImage({ profile }: HeroImageProps) {
       <div className={styles.imageWrap}>
         <Image
           src={profile.avatarUrl}
-          alt={`${profile.name} portrait`}
+          alt={`${t.profile.name} portrait`}
           width={1707}
           height={2560}
           priority

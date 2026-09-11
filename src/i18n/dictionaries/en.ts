@@ -30,6 +30,7 @@ export interface Dictionary {
     seePortfolio: string;
   };
   profile: {
+    name: string;
     role: string;
     location: string;
   };
@@ -132,6 +133,7 @@ export const en: Dictionary = {
     seePortfolio: "See My Portfolio",
   },
   profile: {
+    name: "Bek",
     role: "Software AI Developer",
     location: "Suwon, South Korea",
   },
@@ -141,8 +143,8 @@ export const en: Dictionary = {
     subtitle:
       "AI SaaS platforms, RAG pipelines and LLM orchestration — for Korean product teams and remote clients worldwide.",
     intro:
-      "Ask about Kyler — profile, experience, tech stack, and projects. Answers run through the portfolio RAG API when connected.",
-    placeholder: "Ask anything about Kyler...",
+      "Ask about Bek — profile, experience, tech stack, and projects. Answers run through the portfolio RAG API when connected.",
+    placeholder: "Ask anything about Bek...",
     send: "Send message",
     suggestions: {
       hardest: "What's the hardest thing he's built?",

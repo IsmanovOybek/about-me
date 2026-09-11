@@ -32,6 +32,7 @@ export const ru: Dictionary = {
     seePortfolio: "Смотреть портфолио",
   },
   profile: {
+    name: "Бек",
     role: "Разработчик Software AI",
     location: "Сувон, Южная Корея",
   },
@@ -41,8 +42,8 @@ export const ru: Dictionary = {
     subtitle:
       "AI SaaS, RAG-пайплайны и LLM-оркестрация — для корейских продуктовых команд и удалённых клиентов по всему миру.",
     intro:
-      "Спросите о Kyler — профиль, опыт, стек и проекты. При подключении ответы идут через portfolio RAG API.",
-    placeholder: "Спросите что угодно о Kyler...",
+      "Спросите о Бек — профиль, опыт, стек и проекты. При подключении ответы идут через portfolio RAG API.",
+    placeholder: "Спросите что угодно о Бек...",
     send: "Отправить сообщение",
     suggestions: {
       hardest: "Что самое сложное он построил?",

@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { askAiSuggestions } from "@/data/askAi";
-import { profile } from "@/data/profile";
 import { useAskAiChat } from "@/hooks/useAskAiChat";
 import { useLocale } from "@/providers/LocaleProvider";
 import { cn } from "@/lib/utils";
@@ -23,7 +22,7 @@ export function AskAi() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const hasConversation = messages.length > 0 || isSending;
-  const userInitial = profile.name.charAt(0).toLowerCase();
+  const userInitial = t.profile.name.charAt(0).toLowerCase();
 
   useEffect(() => {
     document.body.style.overflow = "";

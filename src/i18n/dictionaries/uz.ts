@@ -32,6 +32,7 @@ export const uz: Dictionary = {
     seePortfolio: "Portfolioni ko‘rish",
   },
   profile: {
+    name: "Bek",
     role: "Software AI dasturchi",
     location: "Suwon, Janubiy Koreya",
   },
@@ -41,8 +42,8 @@ export const uz: Dictionary = {
     subtitle:
       "AI SaaS, RAG pipeline va LLM orchestration — Koreya product jamoalari va dunyo bo‘ylab remote mijozlar uchun.",
     intro:
-      "Kyler haqida so‘rang — profil, tajriba, stack va loyihalar. Ulanganda javoblar portfolio RAG API orqali keladi.",
-    placeholder: "Kyler haqida istalgan savol bering...",
+      "Bek haqida so‘rang — profil, tajriba, stack va loyihalar. Ulanganda javoblar portfolio RAG API orqali keladi.",
+    placeholder: "Bek haqida istalgan savol bering...",
     send: "Xabar yuborish",
     suggestions: {
       hardest: "U qurgan eng qiyin narsa nima?",

@@ -31,7 +31,7 @@ export function HeroContent({ profile }: HeroContentProps) {
       <div className={styles.intro}>
         <p className={styles.eyebrow}>{t.hero.eyebrow}</p>
         <h1 id="hero-title" className={styles.title}>
-          {t.hero.hello} <span>{profile.name}</span>
+          {t.hero.hello} <span>{t.profile.name}</span>
         </h1>
         <p className={styles.role}>{t.profile.role}</p>
       </div>

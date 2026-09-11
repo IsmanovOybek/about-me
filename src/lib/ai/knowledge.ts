@@ -17,11 +17,13 @@ export function buildKnowledgeDocs(locale: Locale): KnowledgeDoc[] {
 
   docs.push({
     id: "profile",
-    title: `${profile.name} — profile`,
+    title: `${t.profile.name} — profile`,
     tags: [
       "who",
       "about",
-      "kyler",
+      "bek",
+      "бек",
+      "베크",
       "oybek",
       "ismanov",
       "name",
@@ -36,7 +38,7 @@ export function buildKnowledgeDocs(locale: Locale): KnowledgeDoc[] {
       "bio",
     ],
     content: [
-      `${profile.name} is a ${t.profile.role} based in ${t.profile.location}.`,
+      `${t.profile.name} is a ${t.profile.role} based in ${t.profile.location}.`,
       `Age: ${profile.age ?? "n/a"}.`,
       `Tagline: ${profile.tagline}`,
       `Bio: ${profile.bio}`,
@@ -116,7 +118,7 @@ export function buildKnowledgeDocs(locale: Locale): KnowledgeDoc[] {
       "project list",
     ],
     content: [
-      `${profile.name}'s personal projects:`,
+      `${t.profile.name}'s personal projects:`,
       ...projects.map((project) => {
         const copy = t.projects.items[project.id];
         return `- ${project.title} (${project.year}): ${copy.description} Tech: ${project.technologies.join(", ")}.`;
@@ -150,7 +152,7 @@ export function buildKnowledgeDocs(locale: Locale): KnowledgeDoc[] {
     title: "Why hire in Korea",
     tags: ["korea", "seoul", "suwon", "hire", "remote", "timezone", "why"],
     content: [
-      `${profile.name} lives in ${t.profile.location} and works with Korean product teams and remote clients.`,
+      `${t.profile.name} lives in ${t.profile.location} and works with Korean product teams and remote clients.`,
       "He ships AI SaaS, RAG pipelines, and full-stack products end to end as a solo engineer.",
       "Good fit for teams that need production AI systems, NestJS/Next.js backends, and clean product frontends.",
     ].join("\n"),
