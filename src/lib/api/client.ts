@@ -1,5 +1,19 @@
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ?? "";
+function resolveApiBaseUrl(): string {
+  const raw = process.env.NEXT_PUBLIC_API_URL?.trim().replace(/\/$/, "") ?? "";
+  if (!raw) return "";
+
+  // Public deploys must not call a developer machine's localhost RAG API.
+  if (
+    process.env.NODE_ENV === "production" &&
+    /(localhost|127\.0\.0\.1)/i.test(raw)
+  ) {
+    return "";
+  }
+
+  return raw;
+}
+
+const API_BASE_URL = resolveApiBaseUrl();
 
 export class ApiError extends Error {
   readonly status: number;

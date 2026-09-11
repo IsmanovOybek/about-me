@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bek — Portfolio
 
-## Getting Started
+Personal portfolio (Next.js App Router): experience, skills, projects, contact form, and Ask AI.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 + React 19 (SSR + `/api/contact`)
+- SCSS Modules + Framer Motion
+- i18n: English, Korean, Russian, Uzbek
+- Contact: Gmail SMTP with FormSubmit fallback
+- Ask AI: optional FastAPI RAG, else local knowledge
+
+## Local setup
 
 ```bash
+npm install
+cp .env.example .env.local
+# fill CONTACT_TO_EMAIL / GMAIL_* for contact form
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy on Hostinger (Node.js Web App)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Contact form needs a **Node.js** app (SSR). Do **not** use static export / `out` — that breaks `/api/contact`.
 
-## Learn More
+### Requirements
 
-To learn more about Next.js, take a look at the following resources:
+- Hostinger plan with **Node.js / Web Apps** (Business or Cloud)
+- GitHub repo: `IsmanovOybek/about-me`
+- Node.js **20** or newer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Steps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push latest code to GitHub (`main`).
+2. hPanel → **Websites** → **Add Website** → **Node.js Apps**.
+3. **Import Git Repository** → connect GitHub → select `about-me`.
+4. Use these settings (Hostinger often auto-fills Next.js):
 
-## Deploy on Vercel
+| Field | Value |
+|---|---|
+| Application type | `next` (Next.js) |
+| Node.js version | `20` |
+| Build command | `npm run build` |
+| Output directory | `.next` |
+| Start command | `npm run start -- -p $PORT` |
+| Entry file | leave empty (Hostinger runs `next start`) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Add **Environment Variables** in the Hostinger app settings:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Required | Notes |
+|---|---|---|
+| `CONTACT_TO_EMAIL` | Yes | Your inbox |
+| `GMAIL_USER` | Recommended | Gmail for SMTP |
+| `GMAIL_APP_PASSWORD` | Recommended | Google App Password |
+| `NEXT_PUBLIC_API_URL` | No | Leave empty unless RAG API has a public HTTPS URL |
+
+6. Deploy. Then check:
+   - Site opens on your domain
+   - Contact form emails you
+   - Ask AI answers (local knowledge if RAG URL is empty)
+
+### After env changes
+
+Restart / redeploy the Web App so new variables apply.
+
+## Notes
+
+- `.env.local` is gitignored — never commit secrets.
+- Production ignores `localhost` RAG URLs so Ask AI still works without a separate backend.
+- Official Hostinger Next.js guide: [docs.hostinger.com](https://docs.hostinger.com/node.js/overview-1/next)

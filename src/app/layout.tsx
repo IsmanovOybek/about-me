@@ -25,8 +25,15 @@ const notoSansKr = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "About Me | Portfolio",
-  description: "Professional personal portfolio and about me website.",
+  title: "Bek | Software AI Developer",
+  description:
+    "Portfolio of Bek — Software AI Developer in Suwon, South Korea. RAG pipelines, LLM orchestration, and production AI products.",
+  openGraph: {
+    title: "Bek | Software AI Developer",
+    description:
+      "Portfolio of Bek — Software AI Developer in Suwon, South Korea.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
