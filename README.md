@@ -4,11 +4,11 @@ Personal portfolio (Next.js App Router): experience, skills, projects, contact f
 
 ## Stack
 
-- Next.js 16 + React 19 (SSR + `/api/contact`)
+- Next.js 16 + React 19 (SSR + `/api/contact` + `/api/chat`)
 - SCSS Modules + Framer Motion
 - i18n: English, Korean, Russian, Uzbek
 - Contact: Gmail SMTP with FormSubmit fallback
-- Ask AI: optional FastAPI RAG, else local knowledge
+- Ask AI: same-origin `/api/chat` (local knowledge; optional external RAG)
 
 ## Local setup
 
@@ -58,12 +58,18 @@ Contact form needs a **Node.js** app (SSR). Do **not** use static export / `out`
 | `CONTACT_TO_EMAIL` | Yes | Your inbox |
 | `GMAIL_USER` | Recommended | Gmail for SMTP |
 | `GMAIL_APP_PASSWORD` | Recommended | Google App Password |
-| `NEXT_PUBLIC_API_URL` | No | Leave empty unless RAG API has a public HTTPS URL |
+| `NEXT_PUBLIC_API_URL` / `API_URL` | No | **Leave empty** on Hostinger. Ask AI uses `/api/chat` + local knowledge. Do not set `localhost`. |
 
 6. Deploy. Then check:
    - Site opens on your domain
    - Contact form emails you
-   - Ask AI answers (local knowledge if RAG URL is empty)
+   - Ask AI answers without a separate RAG server
+
+### Ask AI not answering after deploy?
+
+1. Remove `NEXT_PUBLIC_API_URL=http://localhost:8000` from Hostinger env (if present).
+2. Redeploy so the new `/api/chat` route is live.
+3. Confirm the app is **Node.js SSR** (output `.next`), not static `out`.
 
 ### After env changes
 
